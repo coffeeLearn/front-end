@@ -27,6 +27,11 @@ body {
     height: 36px;
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    background-color: #288341;
+    border: none;
+    border-radius: 2px;
+    color: white;
 }
 
 /* 리스트 부분 */
@@ -67,4 +72,5 @@ tbody tr td {
 
 .delete-button {
     font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
 }
