@@ -9,12 +9,12 @@ form.addEventListener('submit', async (e) => {
     const name = categoryName.value;
     const description = categoryDescription.value;
 
-    const category = {
+    const category = JSON.stringify({
         name,
         description,
-    };
-
-    const dataJson = JSON.stringify(category);
+    });
+    console.log(category);
+    const dataJson = category;
 
     const token = localStorage.getItem('token');
     console.log(token);
@@ -25,6 +25,7 @@ form.addEventListener('submit', async (e) => {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
         },
         body: dataJson,
     });
@@ -33,6 +34,8 @@ form.addEventListener('submit', async (e) => {
         alert('에러가 발생했습니다.');
         return;
     }
+    alert('카테고리가 등록되었습니다.');
+    form.reset();
 
     const result = await res.json();
     console.log(result);
