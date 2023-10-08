@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <link rel="stylesheet" href="/assets/css/admin/additem.css" />
-    <link rel="stylesheet" href="/assets/css/admin/nav.css" />
-  </head>
-  <body>
-    <%- include('../components/header_admin.html') -%>
-    <div id="contentWrap">
-      <!--왼쪽 네비게이션 -->
-      <nav class="left-nav">
-        <ul>
-          <li>
-            <span>상품관리</span>
-            <ul class="depth1">
-              <li>
-                <a href="/admin/product">상품리스트 관리</a>
-              </li>
-              <li>
-                <a href="/admin/category">카테고리 관리</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <span>주문 관리</span>
-            <ul class="depth1">
-              <li>
-                <a href="/admin/order">주문 내역 관리</a>
-              </li>
-            </ul>
-          </li>
-          <!-- <li>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <link rel="stylesheet" href="/assets/css/admin/additem.css" />
+        <link rel="stylesheet" href="/assets/css/admin/nav.css" />
+    </head>
+    <body>
+        <%- include('../components/header_admin.html') -%>
+        <div id="contentWrap">
+            <!--왼쪽 네비게이션 -->
+            <nav class="left-nav">
+                <ul>
+                    <li>
+                        <span>상품관리</span>
+                        <ul class="depth1">
+                            <li>
+                                <a href="/admin/product">상품리스트 관리</a>
+                            </li>
+                            <li>
+                                <a href="/admin/category">카테고리 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>주문 관리</span>
+                        <ul class="depth1">
+                            <li>
+                                <a href="/admin/order">주문 내역 관리</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
                 <span>사용자관리</span>
                 <ul class="depth1">
                     <li>
@@ -40,92 +40,92 @@
                     </li>
                 </ul>
             </li> -->
-        </ul>
-      </nav>
-      <!-- 오른쪽 컨텐츠영역 -->
-      <div id="contentBox">
-        <!-- 내역 박스 -->
-        <div class="product-box">
-          <p>상품 추가</p>
-        </div>
-        <!-- 인풋 폼 -->
-        <form id="addItemForm">
-          <ul>
-            <li>
-              <label>카테고리 선택</label>
-              <select class="select-category" selected>
-                <option value="">카테고리 선택</option>
-                <option value="커피">커피</option>
-                <option value="선물세트">선물세트</option>
-              </select>
-            </li>
-            <li>
-              <label>맛선택</label>
-              <select class="select-taste" disabled selected>
-                <option value="">선택하세요</option>
-                <option value="달콤/쌉싸름">달콤/쌉싸름</option>
-                <option value="고소함/구수함">고소함/구수함</option>
-                <option value="묵직하고 달콤한 여운">묵직하고 달콤한 여운</option>
-                <option value="은은하고 편안함">은은하고 편안함</option>
-                <option value="상큼한 산미와 향">상큼한 산미와 향</option>
-              </select>
-            </li>
-            <li>
-              <label>원산지선택</label>
-              <select class="select-origin" disabled selected>
-                <option value="">선택하세요</option>
-                <option value="아시아/태평양">아시아/태평양</option>
-                <option value="중남미">중남미</option>
-                <option value="아프리카">아프리카</option>
-                <option value="블렌드">블렌드</option>
-              </select>
-            </li>
+                </ul>
+            </nav>
+            <!-- 오른쪽 컨텐츠영역 -->
+            <div id="contentBox">
+                <!-- 내역 박스 -->
+                <div class="product-box">
+                    <p>상품 추가</p>
+                </div>
+                <!-- 인풋 폼 -->
+                <form id="addItemForm">
+                    <ul>
+                        <li>
+                            <label>카테고리 선택</label>
+                            <select name="selectCategory" class="select-category" selected>
+                                <option value="">카테고리 선택</option>
+                                <option value="커피">커피</option>
+                                <option value="선물세트">선물세트</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>맛선택</label>
+                            <select class="select-taste" disabled selected>
+                                <option value="">선택하세요</option>
+                                <option value="달콤/쌉싸름">달콤/쌉싸름</option>
+                                <option value="고소함/구수함">고소함/구수함</option>
+                                <option value="묵직하고 달콤한 여운">묵직하고 달콤한 여운</option>
+                                <option value="은은하고 편안함">은은하고 편안함</option>
+                                <option value="상큼한 산미와 향">상큼한 산미와 향</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>원산지선택</label>
+                            <select class="select-origin" disabled selected>
+                                <option value="">선택하세요</option>
+                                <option value="아시아/태평양">아시아/태평양</option>
+                                <option value="중남미">중남미</option>
+                                <option value="아프리카">아프리카</option>
+                                <option value="블렌드">블렌드</option>
+                            </select>
+                        </li>
 
-            <li>
-              <label>상품명</label>
-              <input type="text" class="input-name" />
-            </li>
-            <li>
-              <label>가격</label>
-              <input type="number" class="input-price" min="1" />
-            </li>
-            <li>
-              <label>할인율</label>
-              <input type="number" class="input-sale-percent" value="0" />
-            </li>
-            <li>
-              <label>수량</label>
-              <input type="number" class="input-amount" min="1" />
-            </li>
-            <li>
-              <label>이미지</label>
-              <input type="file" class="input-main-img" />
-            </li>
-            <li>
-              <label>설명(이미지)</label>
-              <input type="file" class="input-sub-img" />
-            </li>
-            <li>
-              <label>설명</label>
-              <input type="text" class="input-description" />
-            </li>
-            <li>
-              <label>상품노출</label>
-              <select class="select-show" selected>
-                <option value="true">예</option>
-                <option value="false">아니오</option>
-              </select>
-            </li>
-          </ul>
-          <div class="button-wrap">
-            <button><a href="/admin/product">목록으로</a></button>
-            <button type="submit" class="save-button">저장하기</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <%- include('../components/footer.html') -%>
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/admin/additem.js"></script>
-  </body>
+                        <li>
+                            <label>상품명</label>
+                            <input type="text" class="input-name" />
+                        </li>
+                        <li>
+                            <label>가격</label>
+                            <input type="number" class="input-price" min="1" />
+                        </li>
+                        <li>
+                            <label>할인율</label>
+                            <input type="number" class="input-sale-percent" value="0" />
+                        </li>
+                        <li>
+                            <label>수량</label>
+                            <input type="number" class="input-amount" min="1" />
+                        </li>
+                        <li>
+                            <label>이미지</label>
+                            <input type="file" class="input-main-img" />
+                        </li>
+                        <li>
+                            <label>설명(이미지)</label>
+                            <input type="file" class="input-sub-img" />
+                        </li>
+                        <li>
+                            <label>설명</label>
+                            <input type="text" class="input-description" />
+                        </li>
+                        <li>
+                            <label>상품노출</label>
+                            <select class="select-show" selected>
+                                <option value="true">예</option>
+                                <option value="false">아니오</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="button-wrap">
+                        <button><a href="/admin/product">목록으로</a></button>
+                        <button type="submit" class="save-button">저장하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include('../components/footer.html') -%>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/admin/additem.js"></script>
+    </body>
 </html>
