@@ -45,6 +45,9 @@ input {
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
 }
+input:focus {
+    outline: none;
+}
 .button-wrap {
     width: 470px;
     text-align: right;
@@ -65,8 +68,10 @@ input {
     color: white;
     border: none;
     border-radius: 2px;
+    cursor: pointer;
 }
 .input-price,
-.input-amount {
+.input-amount,
+.input-sale-percent {
     padding: 0 10px 0 10px;
 }

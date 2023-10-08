@@ -1,24 +1,39 @@
 const productId = window.location.pathname.split('/').at(-1);
 
+const selectCategory = document.querySelector('.select-category');
+const selectTaste = document.querySelector('.select-taste');
+const selectOrigin = document.querySelector('.select-origin');
+const inputName = document.querySelector('.input-name');
+const inputPrice = document.querySelector('.input-price');
+const inputSalePercent = document.querySelector('.input-sale-percent');
+const inputAmounut = document.querySelector('.input-amount');
+const inputMainImg = document.querySelector('.input-main-img');
+const inputSubImg = document.querySelector('.input-sub-img');
+const inputDescription = document.querySelector('.input-description');
+const selectShow = document.querySelector('.select-show');
+const form = document.querySelector('#updateItemForm');
+
 fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products')
     .then((response) => response.json())
     .then((data) => {
-        // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택합니다.
+        // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택
         const product = data.filter((item) => {
             return item._id === productId;
         })[0];
 
-        // HTML 폼 요소를 선택하거나 생성하여, 상품 정보를 채웁니다.
-        document.querySelector('.select-category').value = product.category;
-        document.querySelector('.select-taste').value = product.taste;
-        document.querySelector('.select-origin').value = product.origin;
-        document.querySelector('.input-name').value = product.name;
-        document.querySelector('.input-price').value = product.price;
-        //document.querySelector('.input-amount').value = product.amount;
-        //document.querySelector('.input-main-img').value = product.mainImg;
-        // document.querySelector('.input-sub-img').value = product.subImg;
-        document.querySelector('.input-description').value = product.description;
-        //document.querySelector('.select-show').value = product.show;
+        //상품 정보를 채움
+        selectCategory.value = product.category;
+        selectTaste.value = product.taste;
+        selectOrigin.value = product.origin;
+        inputName.value = product.name;
+        inputPrice.value = product.price;
+        inputSalePercent.value = product.salePercent;
+        inputAmounut.value = product.amount;
+        inputDescription.value = product.description;
+        selectShow.value = product.show;
+        //document.querySelector('.input-main-img').src = product.mainImg;
+        // document.querySelector('.input-sub-img').src = product.subImg;
+
         checkCategory(product.category);
     })
     .catch((error) => console.log(error));
@@ -38,3 +53,60 @@ function checkCategory(target) {
         document.querySelector('.select-origin').disabled = true;
     }
 }
+
+//상품 수정후 전송
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const category = selectCategory.value;
+    const taste = selectTaste.value;
+    const origin = selectOrigin.value;
+    const name = inputName.value;
+    const price = inputPrice.value;
+    const salePercent = inputSalePercent.value;
+    const amount = inputAmounut.value;
+    const mainImg = inputMainImg.files[0];
+    console.log(inputMainImg.files[0]);
+    const subImg = inputSubImg.files[0];
+    const description = inputDescription.value;
+    const show = selectShow.value;
+
+    const product = JSON.stringify({
+        category,
+        taste,
+        origin,
+        name,
+        price,
+        salePercent,
+        amount,
+        description,
+        show,
+    });
+
+    const payload = new FormData();
+    payload.append('data', product);
+    payload.append('main', mainImg);
+    payload.append('sub', subImg);
+
+    try {
+        const token = localStorage.getItem('token');
+        const res = await fetch(`http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${productId}`, {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: payload,
+        });
+
+        if (!res.ok) {
+            throw new Error('상품 수정에 실패했습니다.');
+        }
+        alert('상품수정이 완료 되었습니다.');
+
+        const result = await res.json();
+        console.log('업로드 결과:', result);
+    } catch (error) {
+        console.error(error);
+    }
+});
