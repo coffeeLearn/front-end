@@ -194,7 +194,7 @@ img {
 #header .header-right ul li a:hover .header-img {
     margin-bottom: 10px;
 }
-.header-right li span{
+.header-right li span {
     width: 60px;
     height: 15px;
     text-align: center;
@@ -203,8 +203,9 @@ img {
 /* 푸터 */
 #footer {
     border-top: 1px solid #eeeeee;
-    padding: 30px 0;
     background-color: #ffffff;
+    height: 149px;
+    display: flex;
 }
 #footer .inner {
     margin: auto;
@@ -257,7 +258,7 @@ img {
     justify-content: center;
     align-items: center;
 }
-#to-top.on{
+#to-top.on {
     display: none;
 }
 
