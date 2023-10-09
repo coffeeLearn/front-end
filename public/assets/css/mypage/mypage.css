@@ -1,6 +1,9 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .container {
     width: 1280px;
