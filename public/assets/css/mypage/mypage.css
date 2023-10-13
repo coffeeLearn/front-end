@@ -60,7 +60,7 @@ body {
 .order-check {
     margin-bottom: 30px;
 }
-.order-check h2 {
+.content-title {
     color: #000;
     font-size: 20px;
     font-style: normal;
@@ -183,31 +183,48 @@ body {
     /* 이미지 url 수정 */
 }
 
-#order-list {
+.button-box {
+    text-align: right;
+}
+.button-box button {
+    width: 100px;
+    height: 36px;
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    background-color: #288341;
+    border: none;
+    border-radius: 2px;
+    color: white;
+}
+#maypage-list {
     border-collapse: collapse;
     width: 976px;
 
     margin-top: 10px;
     border-top: 2px solid black;
 }
-#order-list th {
+#maypage-list th {
     border-bottom: 1px solid #ddd;
     padding: 20px 0;
     height: 15px;
     text-align: center;
     font-size: 14px;
+    font-weight: 600;
 }
-#order-list td {
+#maypage-list td {
     padding: 20px;
     text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
 }
-#order-rows {
+#maypage-rows {
     border-bottom: 1px solid #ddd;
 }
-#order-rows tr {
+#maypage-rows tr {
     border-bottom: 1px solid #ddd;
 }
-#order-rows tr:hover {
+#maypage-rows tr:hover {
     background-color: #f5f5f5;
 }
 

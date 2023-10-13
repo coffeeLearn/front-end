@@ -15,7 +15,7 @@
             <%- include('../components/mypage_nav.html') -%>
             <div class="order-inner">
                 <div class="order-check">
-                    <h2>주문/배송 조회</h2>
+                    <h2 class="content-title">주문/배송 조회</h2>
                     <div class="order-box">
                         <ul class="order-ul">
                             <li>
@@ -62,9 +62,9 @@
                         <button id="search-button"></button>
                     </div>
                 </div>
-                <div class="order-list">
+                <div class="maypage-list">
                     <span class="total-orders">내역 총 0건</span>
-                    <table id="order-list">
+                    <table id="maypage-list">
                         <thead>
                             <tr>
                                 <th>상품번호/주문일</th>
@@ -76,7 +76,7 @@
                                 <th>주문 수정</th>
                             </tr>
                         </thead>
-                        <tbody id="order-rows"></tbody>
+                        <tbody id="maypage-rows"></tbody>
                         <th colspan="7" style="text-align: center" class="empty-order">주문 내역이 없습니다</th>
                         <!-- td 존재 -->
                     </table>

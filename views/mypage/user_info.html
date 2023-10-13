@@ -17,23 +17,19 @@
                 <%- include('../components/mypage_nav.html') -%>
                 <div id="myInfomation">
                     <div>
-                        <h2 class="user-h2">회원정보</h2>
+                        <h2 class="content-title">회원정보</h2>
                     </div>
 
                     <div class="table-wrap">
                         <table>
-                            <colgroup>
-                                <col width="25%" />
-                                <col width="75%" />
-                            </colgroup>
                             <tbody>
                                 <tr>
                                     <th><span class="important">이메일</span></th>
-                                    <td><p class="user-email">이메일</p></td>
+                                    <td><input class="user-email" value="이메일" disabled /></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">비밀번호</span></th>
-                                    <td><p class="user-password">*******</p></td>
+                                    <td><input class="user-password" value="비밀번호" disabled /></td>
                                 </tr>
                                 <tr>
                                     <th><span class="important">이름</span></th>
@@ -52,7 +48,7 @@
                                             class="user-addr"
                                             autocomplete="off"
                                             required
-                                            value="주소적힘"
+                                            value="주소"
                                         />
                                     </td>
                                 </tr>
