@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>커피런 - 로그인</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/login_join/login_join.css" />
-    <!-- 오류 처리 이벤트 jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
-    <!-- 로그인 관련 axios 설치 -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <section class="section login">
-        <h1>로그인</h1>
-        <form name="form">
-          <div class="int-area">
-            <input type="text" name="id" id="id" autocomplete="off" required />
-            <label for="id" class="user-idtext">E-mail</label>
-          </div>
-          <div class="int-area">
-            <input type="password" name="pw" id="pw" autocomplete="off" required />
-            <label for="pw">PASSWORD</label>
-          </div>
-          <div class="btn-area">
-            <!-- 로그인 버튼 이벤트 추가 -->
-            <button type="submit" class="btn1" onclick="handleLoginSubmit(event)">로그인</button>
-            <!-- onclick="handleLoginSubmit(event)" -->
-            <button onclick="location.href='join'" type="submit" class="btn2">회원가입</button>
-          </div>
-        </form>
-        <div class="caption">
+    <head>
+        <title>커피런 - 로그인</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/login_join/login_join.css" />
+        <!-- 오류 처리 이벤트 jquery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+            crossorigin="anonymous"
+        ></script>
+        <!-- 로그인 관련 axios 설치 -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <section class="section login">
+                <h1>로그인</h1>
+                <form name="form">
+                    <div class="int-area">
+                        <input type="text" name="id" id="id" autocomplete="off" required />
+                        <label for="id" class="user-idtext">E-mail</label>
+                    </div>
+                    <div class="int-area">
+                        <input type="password" name="pw" id="pw" autocomplete="off" required />
+                        <label for="pw">PASSWORD</label>
+                    </div>
+                    <div class="btn-area">
+                        <!-- 로그인 버튼 이벤트 추가 -->
+                        <button type="submit" class="btn1" onclick="handleLoginSubmit(event)">로그인</button>
+                        <!-- onclick="handleLoginSubmit(event)" -->
+                        <button onclick="location.href='join'" type="submit" class="btn2">회원가입</button>
+                    </div>
+                </form>
+                <!-- <div class="caption">
           <button onclick="upComingFeatureAlert()">아이디 찾기</button>
           <button onclick="upComingFeatureAlert()">비밀번호 찾기</button>
+        </div> -->
+            </section>
         </div>
-      </section>
-    </div>
-    <%- include('../components/footer.html') -%>
-  </body>
-  <script src="/assets/js/common.js"></script>
-  <script src="/assets/js/api/fetchApi.js"></script>
-  <!-- 로그인 실패시 경고창 -->
-  <script src="/assets/js/login/alert.js"></script>
-  <!-- 로그인 관련 js파일 -->
-  <script src="/assets/js/login/login.js"></script>
+        <%- include('../components/footer.html') -%>
+    </body>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/api/fetchApi.js"></script>
+    <!-- 로그인 실패시 경고창 -->
+    <script src="/assets/js/login/alert.js"></script>
+    <!-- 로그인 관련 js파일 -->
+    <script src="/assets/js/login/login.js"></script>
 </html>
 
 <!-- 추가로 해야할 거 

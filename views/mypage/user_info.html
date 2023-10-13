@@ -1,89 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>커피런 - 회원정보 변경</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
-    <link rel="stylesheet" href="/assets/css/mypage/user_info.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <div class="box-inner">
-        <div class="container">
-          <%- include('../components/mypage_nav.html') -%>
-          <div id="myInfomation">
-            <div>
-              <h2 class="user-h2">회원정보</h2>
-              <p class="user-p">회원정보 수정 및 탈퇴 기능은 준비중입니다.</p>
-            </div>
+<html lang="kr">
+    <head>
+        <title>커피런 - 회원정보 변경</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
+        <link rel="stylesheet" href="/assets/css/mypage/user_info.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <div class="container">
+                <%- include('../components/mypage_nav.html') -%>
+                <div id="myInfomation">
+                    <div>
+                        <h2 class="user-h2">회원정보</h2>
+                    </div>
 
-            <div class="table-wrap">
-              <table>
-                <colgroup>
-                  <col width="25%" />
-                  <col width="75%" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th><span class="important">이메일</span></th>
-                    <td><p class="user-email"></p></td>
-                  </tr>
-                  <tr>
-                    <th><span class="important">비밀번호</span></th>
-                    <td><p class="user-password"></p></td>
-                  </tr>
-                  <tr>
-                    <th><span class="important">이름</span></th>
-                    <td><input type="text" class="user-name" value="이름" /></td>
-                  </tr>
-                  <tr>
-                    <th><span class="important">휴대폰번호</span></th>
-                    <td><input type="text" class="user-phone" value="휴대폰번호" /></td>
-                  </tr>
-                  <tr>
-                    <th><span class="important">주소</span></th>
-                    <td>
-                      <input
-                        type="text"
-                        name="address"
-                        class="user-addr"
-                        autocomplete="off"
-                        required
-                        value="주소적힘"
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    <div class="table-wrap">
+                        <table>
+                            <colgroup>
+                                <col width="25%" />
+                                <col width="75%" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="important">이메일</span></th>
+                                    <td><p class="user-email">이메일</p></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="important">비밀번호</span></th>
+                                    <td><p class="user-password">*******</p></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="important">이름</span></th>
+                                    <td><input type="text" class="user-name" value="이름" /></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="important">휴대폰번호</span></th>
+                                    <td><input type="text" class="user-phone" value="휴대폰번호" /></td>
+                                </tr>
+                                <tr>
+                                    <th><span class="important">주소</span></th>
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="address"
+                                            class="user-addr"
+                                            autocomplete="off"
+                                            required
+                                            value="주소적힘"
+                                        />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-button">
+                        <button class="unsubscrib" onclick="upComingFeatureAlert()">회원탈퇴</button>
+                        <button class="edit-btn" onclick="upComingFeatureAlert()">수정완료</button>
+                    </div>
+                </div>
             </div>
-            <div class="info-button">
-              <button class="edit-btn" onclick="upComingFeatureAlert()">수정완료</button>
-              <button class="unsubscrib" onclick="upComingFeatureAlert()">회원탈퇴</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <%- include('../components/footer.html') -%>
-  </body>
-  <script src="/assets/js/fetchApi.js"></script>
-  <!-- kakao API -->
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <!-- kakao API -->
-  <script src="/assets/js/address_kakao.js"></script>
-  <!-- 회원 정보 불러오기 -->
-  <!-- 페이지 로드 -> fetchUserInfo로 불러와서 입력필드 채움 -->
-  <!-- <script>
+        <%- include('../components/footer.html') -%>
+    </body>
+    <script src="/assets/js/fetchApi.js"></script>
+    <!-- kakao API -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- kakao API -->
+    <script src="/assets/js/address_kakao.js"></script>
+    <!-- 회원 정보 불러오기 -->
+    <!-- 페이지 로드 -> fetchUserInfo로 불러와서 입력필드 채움 -->
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', fetchUserInfo);
     </script> -->
-  <!-- 정보 불러오는 파일 , 탈퇴 -->
-  <script src="/assets/js/user_infomation.js"></script>
-  <script src="/assets/js/common.js"></script>
+    <!-- 정보 불러오는 파일 , 탈퇴 -->
+    <script src="/assets/js/user_infomation.js"></script>
+    <script src="/assets/js/common.js"></script>
 </html>
 
 <!-- 

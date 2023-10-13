@@ -1,48 +1,46 @@
 body {
-  /* display: flex; */
-  /* justify-content: center; */
-  align-items: center;
-  height: 100vh;
-  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 body::before {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: (0, 0, 0, 0.7);
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: (0, 0, 0, 0.7);
 }
 #wrap {
-  min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 250px);
+    width: 100%;
 }
 .section {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  margin-bottom: 100px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 100px;
 }
 .section h1 {
-  /*margin-bottom: 60px; */
-  color: #000;
-  font-size: 30px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
-  margin-bottom: 40px;
+    /*margin-bottom: 60px; */
+    color: #000;
+    font-size: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
 }
 .int-area {
-  position: relative;
-  margin-top: 20px;
-  box-sizing: border-box;
+    position: relative;
+    margin-top: 20px;
+    box-sizing: border-box;
 }
 
 /* .div_phone {
@@ -54,146 +52,147 @@ body::before {
 } */
 
 .int-area:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
-.section.login .int-area input{
-  width: 350px;
+.section.login .int-area input {
+    width: 350px;
 }
 .int-area input {
-  width: 100%;
-  padding: 20px 10px 10px;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #999;
-  font-size: 18px;
-  color: black;
-  outline: none;
-  margin-right: 10px;
-  box-sizing: border-box;
-
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    margin-right: 10px;
+    box-sizing: border-box;
 }
 .int-area label {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  font-size: 18px;
-  color: #999;
-  transition: top 0.5s ease;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: #999;
+    transition: top 0.5s ease;
 }
 .int-area label.warning {
-  color: red !important;
-  animation: warning 0.3s ease;
-  animation-iteration-count: 3;
+    color: red !important;
+    animation: warning 0.3s ease;
+    animation-iteration-count: 3;
 }
 
 .int-area input:focus + label,
 .int-area input:valid + label {
-  top: 0;
-  font-size: 13px;
-  color: #2e170d;
+    top: 0;
+    font-size: 13px;
+    color: #2e170d;
 }
 .btn-area {
-  margin-top: 40px;
-  /* display: flex;
+    margin-top: 40px;
+    /* display: flex;
     justify-content: center; */
 }
 /* 로그인 버튼 */
 .btn1 {
-  width: 100%;
-  height: 50px;
-  background: #288341;
-  color: #fff;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  margin-top: 30px;
-  text-align: center;
+    width: 100%;
+    height: 50px;
+    background: #288341;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 /* 버튼 css 다시 조절 (7.7 18:57) */
 /* .signup_text {
   border-top: 10px;
 } */
 .btn1:disabled {
-  background: #cccccc; /* 흐린 배경색 */
-  color: #777777; /* 흐린 글자 색 */
-  cursor: not-allowed; /* 차단된 마우스 포인터 표시 */
+    background: #cccccc; /* 흐린 배경색 */
+    color: #777777; /* 흐린 글자 색 */
+    cursor: not-allowed; /* 차단된 마우스 포인터 표시 */
 }
 /* 회원가입 버튼 */
 .btn2 {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  background: #371d1d;
-  color: #fff;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background: #371d1d;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 아이디, 비밀번호 잃어버린 문구  */
 .caption {
-  margin-top: 40px;
-  text-align: center;
+    margin-top: 40px;
+    text-align: center;
 }
 .caption button {
-  border: none;
-  background-color: transparent;
-  font-size: 15px;
-  color: #999;
-  cursor: pointer;
-  text-decoration: underline;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    color: #999;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .pw_checking {
-  margin-top: 10px;
-  width: 100%;
-  height: 50px;
-  background: #e9e9e9;
-  color: #282828;
-  font-size: 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background: #e9e9e9;
+    color: #282828;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 #result {
-  text-align: center;
-  color: red;
+    text-align: center;
+    color: red;
 }
 .email_input {
-  width: none;
+    width: none;
 }
 
 /* *표시한 글씨 */
 .required-asterisk {
-  color: red;
+    color: red;
 }
 
 /* 주소 입력*/
 #address {
-  pointer-events: none;
-  padding-left: 80px;
-  border-radius: 3px;
+    pointer-events: none;
+    padding-left: 80px;
+    border-radius: 3px;
 }
-#address::placeholder{
-  font-size: 15px;
-  color: #81a88a;
+#address::placeholder {
+    font-size: 15px;
+    color: #81a88a;
 }
 .addr-btn {
-  border-radius: 5px;
-  padding: 12px;
-  cursor: pointer;
-  border: 1px solid #288341;
-  color: #288341;
-  background-color: #fff;
-  display: inline-block;
-  font-size: 14px;
-  margin-left: 10px;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    border: 1px solid #288341;
+    color: #288341;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
 }
-.addr-btn:hover{
-  background-color: #288341;
-  color: #fff;
+.addr-btn:hover {
+    background-color: #288341;
+    color: #fff;
 }

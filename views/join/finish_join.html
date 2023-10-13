@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>커피런</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Cutom CSS & JS -->
-    <%- include('../components/head.html') -%>
-    <link rel="stylesheet" href="/assets/css/login_join/finish_join.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <div id="main">
-        <div class="pic">
-          <img src="/assets/img/logo_img.png" alt="커피런 로고" width="180px" />
+    <head>
+        <title>커피런</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Cutom CSS & JS -->
+        <%- include('../components/head.html') -%>
+        <link rel="stylesheet" href="/assets/css/login_join/finish_join.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <div id="main">
+                <div class="pic">
+                    <img src="/assets/img/logo_img.png" alt="커피런 로고" height="120px" />
+                </div>
+                <div class="text">
+                    <h3>회원가입이 완료 되었습니다.</h3>
+                </div>
+                <button id="loginButton" onclick="location.href='/login'">로그인 하기</button>
+            </div>
         </div>
-        <div class="text">
-          <h3>회원가입이 완료 되었습니다.</h3>
-        </div>
-        <button id="loginButton" onclick="location.href='/login'">로그인 하기</button>
-      </div>
-    </div>
-    <%- include('../components/footer.html') -%>
-    <!-- JS -->
-    <script src="/assets/js/common.js"></script>
-  </body>
+        <%- include('../components/footer.html') -%>
+        <!-- JS -->
+        <script src="/assets/js/common.js"></script>
+    </body>
 </html>

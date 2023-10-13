@@ -1,99 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>커피런 - 마이페이지</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
-    <link rel="stylesheet" href="/assets/css/mypage/order_modify.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div class="box-inner">
-      <div class="container">
-        <%- include('../components/mypage_nav.html') -%>
-        <div class="order-inner">
-          <div class="order-check">
-            <h2>주문/배송 조회</h2>
-            <div class="order-box">
-              <ul class="order-ul">
-                <li>
-                  <p>0</p>
-                  주문접수
-                </li>
-                <li class="material-icons arrow-li">arrow_forward_ios</li>
-                <li>
-                  <p>0</p>
-                  결제완료
-                </li>
-                <li class="material-icons arrow-li">arrow_forward_ios</li>
-                <li>
-                  <p>0</p>
-                  배송준비중
-                </li>
-                <li class="material-icons arrow-li">arrow_forward_ios</li>
-                <li>
-                  <p>0</p>
-                  배송중
-                </li>
-                <li class="material-icons arrow-li">arrow_forward_ios</li>
-                <li>
-                  <p>0</p>
-                  배송완료
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="search-form">
-            <div class="form-search">
-              <span class="check">조회</span>
-              <button class="period-btn" id="btnToday" type="radio">오늘</button>
-              <button class="period-btn" id="btnWeek" type="radio">7일</button>
-              <button class="period-btn" id="btnMonth" type="radio">1개월</button>
-              <button class="period-btn" id="btn3Month" type="radio">3개월</button>
-              <button class="period-btn" id="btnYear" type="radio">1년</button>
-              <label for="start-date"></label>
-              <input type="date" id="start-date" />
-              <span class="wave">~</span>
-              <label for="end-date"></label>
-              <input type="date" id="end-date" />
+    <head>
+        <title>커피런 - 마이페이지</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
+        <link rel="stylesheet" href="/assets/css/mypage/order_modify.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div class="container">
+            <%- include('../components/mypage_nav.html') -%>
+            <div class="order-inner">
+                <div class="order-check">
+                    <h2>주문/배송 조회</h2>
+                    <div class="order-box">
+                        <ul class="order-ul">
+                            <li>
+                                <p>0</p>
+                                주문접수
+                            </li>
+                            <li class="material-icons arrow-li">arrow_forward_ios</li>
+                            <li>
+                                <p>0</p>
+                                결제완료
+                            </li>
+                            <li class="material-icons arrow-li">arrow_forward_ios</li>
+                            <li>
+                                <p>0</p>
+                                배송준비중
+                            </li>
+                            <li class="material-icons arrow-li">arrow_forward_ios</li>
+                            <li>
+                                <p>0</p>
+                                배송중
+                            </li>
+                            <li class="material-icons arrow-li">arrow_forward_ios</li>
+                            <li>
+                                <p>0</p>
+                                배송완료
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-form">
+                    <div class="form-search">
+                        <span class="check">조회</span>
+                        <button class="period-btn" id="btnToday" type="radio">오늘</button>
+                        <button class="period-btn" id="btnWeek" type="radio">7일</button>
+                        <button class="period-btn" id="btnMonth" type="radio">1개월</button>
+                        <button class="period-btn" id="btn3Month" type="radio">3개월</button>
+                        <button class="period-btn" id="btnYear" type="radio">1년</button>
+                        <label for="start-date"></label>
+                        <input type="date" id="start-date" />
+                        <span class="wave">~</span>
+                        <label for="end-date"></label>
+                        <input type="date" id="end-date" />
 
-              <button id="search-button"></button>
+                        <button id="search-button"></button>
+                    </div>
+                </div>
+                <div class="order-list">
+                    <span class="total-orders">내역 총 0건</span>
+                    <table id="order-list">
+                        <thead>
+                            <tr>
+                                <th>상품번호/주문일</th>
+                                <th>상품명/옵션</th>
+                                <th>수량</th>
+                                <th>상품금액</th>
+                                <th>배송 상태</th>
+                                <th>취소 요청</th>
+                                <th>주문 수정</th>
+                            </tr>
+                        </thead>
+                        <tbody id="order-rows"></tbody>
+                        <th colspan="7" style="text-align: center" class="empty-order">주문 내역이 없습니다</th>
+                        <!-- td 존재 -->
+                    </table>
+                </div>
             </div>
-          </div>
-          <div class="order-list">
-            <span class="total-orders">내역 총 0건</span>
-            <table id="order-list">
-              <thead>
-                <tr>
-                  <th>상품번호/주문일</th>
-                  <th>상품명/옵션</th>
-                  <th>수량</th>
-                  <th>상품금액</th>
-                  <th>배송 상태</th>
-                  <th>취소 요청</th>
-                  <th>주문 수정</th>
-                </tr>
-              </thead>
-              <tbody id="order-rows"></tbody>
-              <th colspan="7" style="text-align: center" class="empty-order">주문 내역이 없습니다</th>
-              <!-- td 존재 -->
-            </table>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- 모달 -->
-    <%- include('../components/modal_order_modify.html') -%>
-    <!-- 푸터 -->
-    <%- include('../components/footer.html') -%>
-    <!-- JS -->
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/mypage/mypage.js"></script>
-    <script src="/assets/js/mypage/order_modify.js"></script>
-    <!-- kakao API -->
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  </body>
+        <!-- 푸터 -->
+        <%- include('../components/footer.html') -%>
+        <!-- 모달 -->
+        <%- include('../components/modal_order_modify.html') -%> v
+        <!-- JS -->
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/mypage/mypage.js"></script>
+        <script src="/assets/js/mypage/order_modify.js"></script>
+        <!-- kakao API -->
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    </body>
 </html>

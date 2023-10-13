@@ -1,37 +1,44 @@
-#main {
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 120px;
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #wrap {
-  min-height: calc(100vh -400px);
+    min-height: calc(100vh - 250px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main {
+    width: 1280px;
+    text-align: center;
 }
 .text {
-  color: #000;
-  font-size: 20px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-top: 60px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 60px;
 }
 #loginButton {
-  width: 300px;
-  height: 50px;
-  background: #288341;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-bottom: 50px;
-  margin-top: 30px;
+    width: 300px;
+    height: 50px;
+    background: #288341;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 80px;
 }
 .pic {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.text{
-    margin: 30px ;
+.text {
+    margin: 30px;
 }

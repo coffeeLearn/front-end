@@ -1,78 +1,117 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container {
+    width: 1280px;
+    min-height: calc(100vh - 300px);
+}
+/*  왼쪽 nav 영역 */
+.left-nav {
+    width: 162px;
+}
+
 #myInfomation {
-  width: 100%;
-  margin-left: 80px;
-  margin-top: 105px;
+    width: 978px;
 }
 .user-h2 {
-  padding: 0 0 10px 0;
-  font-size: 20px;
-  font-weight: 600;
-  border-bottom: 2px solid #3c3c3c;
-}
-.user-p {
-    margin-top: 20px;
-    color: #999;
+    padding: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    /* border-bottom: 1px solid #3c3c3c; */
 }
 
 /* 정보 */
-.table-wrap{
+
+.table-wrap {
     margin-top: 30px;
 }
+table {
+    border-top: 1px solid #dcdcdc;
+    width: 680px;
+}
 tr {
-  display: table-row;
-  border-bottom: 1px solid #dcdcdc;
-  height: 80px;
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
 }
 th {
-  padding: 12px 20px;
-  background: #fbfbfb;
+    background: #fbfbfb;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100px;
+    font-weight: 600;
+    padding: 0 40px;
+    height: 72px;
+}
+td {
+    padding: 16px 28px;
+    width: 500px;
 }
 td input {
-  width: 80%;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-  margin-top: 20px;
-  margin-left: 28px;
-  border: none;
-  background: #ececec;
-  border-radius: 5px;
-}
-td p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-  margin-top: 20px;
-  margin-left: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ececec;
+    height: 36px;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
+td textarea {
+    font-size: 14px;
+    color: #333;
+    width: 420px;
+    border: 1px solid #ececec;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
+}
+td p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+.textarea-box {
+    height: 232px;
+}
 /* 버튼 */
 .info-button {
-margin-top: 30px;
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    width: 720px;
+    justify-content: flex-end;
 }
 .edit-btn {
-  background: #288341;
-  border-radius: 25px;
-  border: none;
-  width: 140px;
-  font-size: 18px;
-  cursor: pointer;
-  color: #fff;
-  margin-bottom: 10px;
-  text-align: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  float: left;
-  padding: 10px;
+    background: #288341;
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 .unsubscrib {
-  margin-top: 10px;
-  width: 140px;
-  background: #371d1d;
-  color: #fff;
-  font-size: 18px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  padding: 10px;
+    width: 140px;
+    background: #371d1d;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
