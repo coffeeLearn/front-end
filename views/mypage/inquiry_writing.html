@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title>커피런 - 회원정보 변경</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
+        <link rel="stylesheet" href="/assets/css/mypage/user_info.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <div class="container">
+                <%- include('../components/mypage_nav.html') -%>
+                <div id="myInfomation">
+                    <div>
+                        <h2 class="user-h2">문의하기</h2>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <colgroup>
+                                <col width="25%" />
+                                <col width="75%" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span>제목</span></th>
+                                    <td><input type="text" placeholder="제목을 입력해 주세요." /></td>
+                                </tr>
+                                <tr class="textarea-box">
+                                    <th class="textarea-box"><span>내용</span></th>
+                                    <td>
+                                        <textarea placeholder="내용을 입력해 주세요."></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-button">
+                        <button class="edit-btn" onclick="upComingFeatureAlert()">등록하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('../components/footer.html') -%>
+    </body>
+
+    <script src="/assets/js/common.js"></script>
+</html>

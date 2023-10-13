@@ -31,43 +31,58 @@ body {
 }
 table {
     border-top: 1px solid #dcdcdc;
+    width: 680px;
 }
 tr {
-    display: table-row;
     border-bottom: 1px solid #dcdcdc;
-    height: 60px;
+    display: flex;
 }
 th {
     background: #fbfbfb;
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 60px;
     width: 100px;
     font-weight: 600;
-    padding: 0 40px 0;
+    padding: 0 40px;
+    height: 72px;
 }
 td {
-    padding: 0 28px;
+    padding: 16px 28px;
+    width: 500px;
 }
 td input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 420px;
     font-size: 14px;
     color: #333;
     border: 1px solid #ececec;
     height: 36px;
     border-radius: 5px;
     padding: 0 10px;
+    box-sizing: border-box;
+}
+
+td textarea {
+    font-size: 14px;
+    color: #333;
+    width: 420px;
+    border: 1px solid #ececec;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 10px;
 }
 td p {
     font-size: 14px;
     line-height: 1.5;
     color: #333;
 }
-
+.textarea-box {
+    height: 232px;
+}
 /* 버튼 */
 .info-button {
     margin-top: 40px;
