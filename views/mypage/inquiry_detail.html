@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>커피런 - 마이페이지</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div class="container">
+            <%- include('../components/mypage_nav.html') -%>
+            <div class="maypage-inner">
+                <h2 class="content-title">문의 내역 확인</h2>
+                <div class="maypage-list">
+                    <table id="maypage-list">
+                        <thead>
+                            <tr>
+                                <th style="width: 16%">답변완료</th>
+                                <th class="text_align_left">유통기한 문의입니다.</th>
+                                <th style="width: 20%">2023-10-10</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3" class="text_align_left">
+                                    안녕하세요. 수만트라 원두 100kg로 대량 구매를 하고 싶은데요 . 보통 유통기한이 어떻게
+                                    되나요?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text_align_left">
+                                    안녕하세요 . 고객님 원두는 개봉전 유통기한은 12개월이며 , 개봉후에는 1달안에 사용을
+                                    권장드리고 있습니다. 더 궁금하신 사항이 있으시면 언제든지 문의 바랍니다. 감사합니다.
+                                    <p>2023-10-10</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="info-button">
+                    <a class="edit-btn" href="/mypage/inquiry_list">목록으로</a>
+                </div>
+            </div>
+        </div>
+        <!-- 푸터 -->
+        <%- include('../components/footer.html') -%>
+        <!-- 모달 -->
+        <%- include('../components/modal_order_modify.html') -%> v
+        <!-- JS -->
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/mypage/mypage.js"></script>
+    </body>
+</html>

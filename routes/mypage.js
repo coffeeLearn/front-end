@@ -17,5 +17,11 @@ router.get('/order_modify', function (req, res) {
 router.get('/inquiry', function (req, res) {
     res.render('mypage/inquiry_writing');
 });
+router.get('/inquiry_list', function (req, res) {
+    res.render('mypage/inquiry_list');
+});
+router.get('/inquiry_detail/:id', function (req, res) {
+    res.render('mypage/inquiry_detail');
+});
 
 export default router;
