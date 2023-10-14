@@ -196,6 +196,7 @@ body {
     border: none;
     border-radius: 2px;
     color: white;
+    margin-bottom: 20px;
 }
 #maypage-list {
     border-collapse: collapse;
