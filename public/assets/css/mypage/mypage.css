@@ -66,7 +66,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
 }
 .order-box {
     width: 978px;
@@ -179,8 +179,6 @@ body {
     background-size: 24px 24px;
     background-position: center;
     cursor: pointer;
-
-    /* 이미지 url 수정 */
 }
 
 .button-box {
@@ -212,12 +210,25 @@ body {
     text-align: center;
     font-size: 14px;
     font-weight: 600;
+    background-color: #fbfbfb;
 }
+
 #maypage-list td {
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid #ddd;
     font-size: 14px;
+}
+
+#maypage-list .text_align_left {
+    text-align: left;
+    padding: 20px 20px 20px 40px;
+}
+
+#maypage-list .text_align_left p {
+    margin-top: 10px;
+    text-align: right;
+    color: #a5a5a5;
 }
 #maypage-rows {
     border-bottom: 1px solid #ddd;
@@ -274,4 +285,25 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5); /* 배경 어둡게 */
+}
+
+.info-button {
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.edit-btn {
+    background: #288341;
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    float: left;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
