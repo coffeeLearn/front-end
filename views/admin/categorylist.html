@@ -1,75 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <link rel="stylesheet" href="/assets/css/admin/list.css" />
-    <link rel="stylesheet" href="/assets/css/admin/nav.css" />
-  </head>
-  <body>
-    <%- include('../components/header_admin.html') -%>
-    <div id="contentWrap">
-      <!--왼쪽 네비게이션 -->
-      <nav class="left-nav">
-        <ul>
-          <li>
-            <span>상품관리</span>
-            <ul class="depth1">
-              <li>
-                <a href="/admin/product">상품리스트 관리</a>
-              </li>
-              <li>
-                <a href="/admin/category">카테고리 관리</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <span>주문 관리</span>
-            <ul class="depth1">
-              <li>
-                <a href="/admin/order">주문 내역 관리</a>
-              </li>
-            </ul>
-          </li>
-          <!-- <li>
-                        <span>사용자관리</span>
-                        <ul class="depth1">
-                            <li>
-                                <a href="">사용자리스트 관리</a>
-                            </li>
-                        </ul>
-                    </li> -->
-        </ul>
-      </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <link rel="stylesheet" href="/assets/css/admin/list.css" />
+        <link rel="stylesheet" href="/assets/css/admin/nav.css" />
+    </head>
+    <body>
+        <%- include('../components/header_admin.html') -%>
+        <div id="contentWrap">
+            <!--왼쪽 네비게이션 -->
+            <%- include('../components/admin_nav.html') -%>
+            <!-- 오른쪽 컨텐츠영역 -->
+            <div id="rightBox">
+                <!-- 내역 박스 -->
+                <div class="title-box">
+                    <p>카테고리 관리</p>
+                    <div class="button-box">
+                        <a href="/admin/addcategory"> <button>카테고리 추가</button></a>
+                    </div>
+                </div>
 
-      <!-- 오른쪽 컨텐츠영역 -->
-      <div id="rightBox">
-        <!-- 내역 박스 -->
-        <div class="title-box">
-          <p>카테고리 관리</p>
-          <div class="button-box">
-            <a href="/admin/addcategory"> <button>카테고리 추가</button></a>
-          </div>
+                <!-- 리스트 -->
+                <div>
+                    <table id="categoryList">
+                        <thead>
+                            <tr>
+                                <th style="width: 24%">번호</th>
+                                <th style="width: 14%">카테고리</th>
+                                <th>설명</th>
+                                <th style="width: 14%">카테고리 삭제</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
-
-        <!-- 리스트 -->
-        <div>
-          <table id="categoryList">
-            <thead>
-              <tr>
-                <th style="width: 24%">번호</th>
-                <th style="width: 14%">카테고리</th>
-                <th>설명</th>
-                <th style="width: 14%">카테고리 삭제</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-    </div>
-    <%- include('../components/footer.html') -%>
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/admin/categorylist.js"></script>
-  </body>
+        <%- include('../components/footer.html') -%>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/admin/categorylist.js"></script>
+    </body>
 </html>
