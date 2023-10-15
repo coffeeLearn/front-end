@@ -82,7 +82,8 @@ tbody tr td {
     font-size: 12px;
 }
 .order-item {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 16px;
+    text-align: left;
 }
 
 .item-name {
