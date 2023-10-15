@@ -1,4 +1,4 @@
-const categoryList = document.querySelector('#categoryList');
+const categoryList = document.querySelector('#adminList');
 
 //리스트 불러오기
 insertCategoryElement();

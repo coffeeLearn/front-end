@@ -1,4 +1,4 @@
-const productList = document.querySelector('#productList');
+const productList = document.querySelector('#adminList');
 
 //리스트 불러오기
 insertProductElement();
