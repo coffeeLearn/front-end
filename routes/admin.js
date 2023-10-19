@@ -26,6 +26,11 @@ router.get('/productdetails/:productId', function (req, res) {
 router.get('/addcategory', function (req, res) {
     res.render('admin/add_category');
 });
+router.get('/categorydetails/:categoryId', function (req, res) {
+    const categoryId = req.params.categoryId;
+    res.render('admin/category_details', { categoryId });
+});
+
 router.get('/users', function (req, res) {
     res.render('admin/users');
 });

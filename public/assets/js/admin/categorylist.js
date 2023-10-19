@@ -60,6 +60,7 @@ async function insertCategoryElement() {
                         throw new Error('상품 삭제 중 에러가 발생했습니다.');
                     }
                     eventTarget.parentNode.parentNode.remove();
+                    alert('삭제되었습니다.');
                 }
             });
         });
