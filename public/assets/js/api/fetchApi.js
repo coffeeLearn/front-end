@@ -1,6 +1,6 @@
 function fetchApi(path, params) {
     const token = localStorage.getItem('token');
-    const URL = 'http://kdt-sw-5-team07.elicecoding.com:3000';
+    const URL = 'http://coffee-learn.mooo.com/api/';
     return fetch(`${URL}${path}`, {
         ...params,
         headers: {

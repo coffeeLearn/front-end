@@ -8,7 +8,7 @@ async function signUp() {
     const detailedAddress = document.getElementById('detailedAddress').value;
 
     try {
-        const response = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/users/signup', {
+        const response = await fetch('http://coffee-learn.mooo.com/api/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

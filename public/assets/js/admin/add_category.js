@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) => {
 
     const token = localStorage.getItem('token');
 
-    const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/categories/admin';
+    const apiUrl = 'http://coffee-learn.mooo.com/api/categories/admin';
 
     const res = await fetch(apiUrl, {
         method: 'POST',

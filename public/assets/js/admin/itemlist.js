@@ -5,7 +5,7 @@ insertProductElement();
 
 async function insertProductElement() {
     try {
-        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products', {
+        const res = await fetch('http://coffee-learn.mooo.com/api/products', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -48,7 +48,7 @@ async function insertProductElement() {
 
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
                     const productNumber = eventTarget.id;
-                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${productNumber}`;
+                    const apiUrl = `http://coffee-learn.mooo.com/api/products/admin/${productNumber}`;
 
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',

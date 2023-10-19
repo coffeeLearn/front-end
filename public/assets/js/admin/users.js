@@ -5,7 +5,7 @@ insertUserElement();
 async function insertUserElement() {
     const token = localStorage.getItem('token');
     try {
-        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/admin/user', {
+        const res = await fetch('http://coffee-learn.mooo.com/api/admin/user', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,
