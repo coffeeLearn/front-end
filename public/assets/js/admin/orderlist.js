@@ -51,13 +51,16 @@ async function insertOrderElement() {
         orders.forEach((order, idx) => {
             const orderId = order._id;
             const orderNumber = orders.length - idx;
-            const orderDate = order.reg_date;
+            const regDate = order.reg_date;
             const itemName = order.products[0].productName;
             const option = order.products[0].option;
             const itemCount = order.products.length;
             const totalPrice = order.totalPriceEl;
             const orderStatus = order.status;
-            const user = order.userId;
+            const userName = order.userName;
+
+            const newDate = new Date(regDate);
+            const orderDate = newDate.toISOString().slice(0, 19).replace('T', ' ');
 
             if (orderStatus === '결제 완료') {
                 const countElement = document.getElementById('payment-complete-count');
@@ -90,7 +93,7 @@ async function insertOrderElement() {
                 <tr>
                     <td class="order-number" rowspan="1">${orderNumber}</td>
                     <td class="order-date">${orderDate}</td>
-                    <td class="user">${user}</td>
+                    <td class="user">${userName}</td>
                     <td class="order-item">
                         <p class="item-name">${itemName}</p>
                         <p class="option">${option} 외 ${itemCount - 1}건</p>
