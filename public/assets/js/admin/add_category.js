@@ -38,6 +38,7 @@ form.addEventListener('submit', async (e) => {
     }
     alert('카테고리가 등록되었습니다.');
     form.reset();
+    window.location.href = '/admin/category';
 
     const result = await res.json();
     console.log(result);
