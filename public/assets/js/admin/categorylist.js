@@ -1,11 +1,11 @@
-const categoryList = document.querySelector('#categoryList');
+const categoryList = document.querySelector('#adminList');
 
 //리스트 불러오기
 insertCategoryElement();
 
 async function insertCategoryElement() {
     try {
-        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/categories', {
+        const res = await fetch('http://coffee-learn.mooo.com/api/categories', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -48,7 +48,7 @@ async function insertCategoryElement() {
 
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
                     const categoryId = eventTarget.id;
-                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/categories/admin/${categoryId}`;
+                    const apiUrl = `http://coffee-learn.mooo.com/api/categories/admin/${categoryId}`;
 
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
@@ -60,6 +60,7 @@ async function insertCategoryElement() {
                         throw new Error('상품 삭제 중 에러가 발생했습니다.');
                     }
                     eventTarget.parentNode.parentNode.remove();
+                    alert('삭제되었습니다.');
                 }
             });
         });

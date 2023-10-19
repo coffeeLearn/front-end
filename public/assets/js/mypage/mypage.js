@@ -1,5 +1,5 @@
 let orderList;
-const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/mypage/order';
+const apiUrl = 'http://coffee-learn.mooo.com/api/mypage/order';
 function getProducts() {
     return fetch('/assets/data/order.json')
         .then((response) => {

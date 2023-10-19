@@ -1,4 +1,4 @@
-const orderList = document.querySelector('#orderList');
+const orderList = document.querySelector('#adminList');
 const orderStep = document.querySelector('.order-step');
 
 insertOrderElement();
@@ -6,7 +6,7 @@ insertOrderElement();
 async function insertOrderElement() {
     const token = localStorage.getItem('token');
     try {
-        const res = await fetch('http://kdt-sw-5-team07.elicecoding.com:3000/admin/orders', {
+        const res = await fetch('http://coffee-learn.mooo.com/api/admin/orders', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ async function insertOrderElement() {
                 const selectedStatus = selectElement.value;
 
                 try {
-                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/admin/orders/${orderId}`;
+                    const apiUrl = `http://coffee-learn.mooo.com/api/admin/orders/${orderId}`;
                     const token = localStorage.getItem('token');
                     const res = await fetch(apiUrl, {
                         method: 'PUT',
@@ -159,7 +159,7 @@ async function insertOrderElement() {
 
                 if (window.confirm('해당 주문을 취소하시겠습니까?')) {
                     const orderNumber = eventTarget.id;
-                    const apiUrl = `http://kdt-sw-5-team07.elicecoding.com:3000/admin/orders/${orderNumber}`;
+                    const apiUrl = `http://coffee-learn.mooo.com/api/admin/orders/${orderNumber}`;
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
                         headers: {

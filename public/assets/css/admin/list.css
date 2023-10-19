@@ -14,7 +14,7 @@ body {
     width: 976px;
 }
 .title-box > p {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-weight: 600;
     font-size: 20px;
 }
@@ -38,19 +38,13 @@ body {
 a {
     color: black;
 }
-#productList {
+#adminList {
     margin-top: 20px;
     background-color: #fafafa;
     width: 100%;
     border-spacing: 0;
 }
 
-#categoryList {
-    margin-top: 20px;
-    background-color: #fafafa;
-    width: 100%;
-    border-spacing: 0;
-}
 thead {
     height: 30px;
 }

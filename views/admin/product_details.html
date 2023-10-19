@@ -11,37 +11,7 @@
         <%- include('../components/header_admin.html') -%>
         <div id="contentWrap">
             <!--왼쪽 네비게이션 -->
-            <nav class="left-nav">
-                <ul>
-                    <li>
-                        <span>상품관리</span>
-                        <ul class="depth1">
-                            <li>
-                                <a href="/admin/product">상품리스트 관리</a>
-                            </li>
-                            <li>
-                                <a href="/admin/category">카테고리 관리</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span>주문 관리</span>
-                        <ul class="depth1">
-                            <li>
-                                <a href="/admin/order">주문 내역 관리</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <span>사용자관리</span>
-                        <ul class="depth1">
-                            <li>
-                                <a href="">사용자리스트 관리</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                </ul>
-            </nav>
+            <%- include('../components/admin_nav.html') -%>
             <!-- 오른쪽 컨텐츠영역 -->
             <div id="contentBox">
                 <!-- 내역 박스 -->

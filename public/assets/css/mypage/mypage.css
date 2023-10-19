@@ -33,13 +33,13 @@ body {
 .main-li {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 .title {
     color: #000;
     font-size: 16px;
     font-weight: 600;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
     padding: 0 0 10px;
 }
 
@@ -201,7 +201,7 @@ body {
     width: 976px;
 
     margin-top: 10px;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
 }
 #maypage-list th {
     border-bottom: 1px solid #ddd;

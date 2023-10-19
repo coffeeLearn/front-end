@@ -61,7 +61,7 @@ form.addEventListener('submit', async (e) => {
     });
 
     const token = localStorage.getItem('token');
-    const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/products/admin';
+    const apiUrl = 'http://coffee-learn.mooo.com/api/products/admin';
 
     const payload = new FormData();
     payload.append('data', product);
@@ -83,4 +83,5 @@ form.addEventListener('submit', async (e) => {
     alert('상품이 등록되었습니다.');
 
     form.reset();
+    window.location.href = '/admin/product';
 });

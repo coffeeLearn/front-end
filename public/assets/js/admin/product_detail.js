@@ -13,7 +13,7 @@ const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
 const form = document.querySelector('#updateItemForm');
 
-fetch('http://kdt-sw-5-team07.elicecoding.com:3000/products')
+fetch('http://coffee-learn.mooo.com/api/products')
     .then((response) => response.json())
     .then((data) => {
         // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택
@@ -91,7 +91,7 @@ form.addEventListener('submit', async (e) => {
 
     try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`http://kdt-sw-5-team07.elicecoding.com:3000/products/admin/${productId}`, {
+        const res = await fetch(`http://coffee-learn.mooo.com/api/products/admin/${productId}`, {
             method: 'PUT',
             headers: {
                 Authorization: `Bearer ${token}`,

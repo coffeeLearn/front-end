@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <%- include('../components/head.html') -%>
-        <link rel="stylesheet" href="/assets/css/admin/orderlist.css" />
+        <link rel="stylesheet" href="/assets/css/admin/list.css" />
         <link rel="stylesheet" href="/assets/css/admin/nav.css" />
     </head>
     <body>
@@ -14,28 +14,21 @@
             <%- include('../components/admin_nav.html') -%>
 
             <!-- 오른쪽 컨텐츠영역 -->
-            <div id="rigthBox">
+            <div id="rightBox">
                 <!-- 내역 박스 -->
-                <div class="order-stepbox">
-                    <p>주문 내역 관리</p>
-                    <ul class="order-step">
-                    </ul>
+                <div class="title-box">
+                    <p>사용자리스트</p>
                 </div>
 
                 <!-- 리스트 -->
                 <div>
                     <table id="adminList">
-                        <!-- 테이블  -->
                         <thead>
                             <tr>
-                                <th style="width: 8%">주문번호</th>
-                                <th style="width: 10%">주문일</th>
-                                <th style="width: 10%">주문자</th>
-                                <th>상품명/옵션</th>
-                                <th style="width: 8%">총수량</th>
-                                <th style="width: 12%">주문금액</th>
-                                <th style="width: 18%">상태</th>
-                                <th style="width: 10%">취소요청</th>
+                                <th style="width: 20%">번호</th>
+                                <th style="width: 20%">이름</th>
+                                <th>이메일</th>
+                                <th style="width: 20%">상태</th>
                             </tr>
                         </thead>
                     </table>
@@ -44,8 +37,6 @@
         </div>
         <%- include('../components/footer.html') -%>
         <script src="/assets/js/common.js"></script>
-        <script src="/assets/js/admin/orderlist.js"></script>
-    </head>
+        <script src="/assets/js/users.js"></script>
     </body>
 </html>
-

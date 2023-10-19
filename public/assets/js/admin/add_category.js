@@ -9,17 +9,19 @@ form.addEventListener('submit', async (e) => {
     const name = categoryName.value;
     const description = categoryDescription.value;
 
+    if (!name || !description) {
+        alert('전체 내용을 입력해 주세요.');
+    }
+
     const category = JSON.stringify({
         name,
         description,
     });
-    console.log(category);
     const dataJson = category;
 
     const token = localStorage.getItem('token');
-    console.log(token);
 
-    const apiUrl = 'http://kdt-sw-5-team07.elicecoding.com:3000/categories/admin';
+    const apiUrl = 'http://coffee-learn.mooo.com/api/categories/admin';
 
     const res = await fetch(apiUrl, {
         method: 'POST',
@@ -36,6 +38,7 @@ form.addEventListener('submit', async (e) => {
     }
     alert('카테고리가 등록되었습니다.');
     form.reset();
+    window.location.href = '/admin/category';
 
     const result = await res.json();
     console.log(result);
