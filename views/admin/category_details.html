@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <link rel="stylesheet" href="/assets/css/admin/addcategory.css" />
+        <link rel="stylesheet" href="/assets/css/admin/nav.css" />
+    </head>
+    <body>
+        <%- include('../components/header_admin.html') -%>
+        <div id="contentWrap">
+            <!--왼쪽 네비게이션 -->
+            <%- include('../components/admin_nav.html') -%>
+            <!-- 오른쪽 컨텐츠영역 -->
+            <div id="contentBox">
+                <!-- 내역 박스 -->
+                <div class="category-box">
+                    <p>카테고리 수정</p>
+                </div>
+                <!-- 인풋 폼 -->
+
+                <form id="addCategoryForm">
+                    <ul>
+                        <li>
+                            <label>카테고리명</label>
+                            <input type="text" class="category-name" />
+                        </li>
+                        <li>
+                            <label>카테고리설명</label>
+                            <input type="text" class="category-description" />
+                        </li>
+                    </ul>
+                    <div class="button-wrap">
+                        <button><a href="/admin/category">목록으로</a></button>
+                        <button type="submit" class="save-button">저장하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include('../components/footer.html') -%>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/admin/category_detail.js"></script>
+    </body>
+</html>
