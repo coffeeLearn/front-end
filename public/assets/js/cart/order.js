@@ -41,7 +41,6 @@ const detailedAddress = document.querySelector('#detailedAddress');
 
 async function getUserInfo() {
     const token = localStorage.getItem('token');
-    console.log(token);
     try {
         const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
             method: 'GET',
