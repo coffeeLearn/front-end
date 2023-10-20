@@ -16,10 +16,10 @@ async function signUp() {
             body: JSON.stringify({
                 email: id,
                 password: pw,
-                phone_number: phoneNumber,
+                phone: phoneNumber,
                 name,
-                address,
-                detailed_address: detailedAddress,
+                addr: address,
+                detailAddr: detailedAddress,
             }),
         });
 
