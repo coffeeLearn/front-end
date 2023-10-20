@@ -1,147 +1,147 @@
 <html>
-  <head>
-    <title>커피런 - 주문결제</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/cart/cart.css" />
-    <link rel="stylesheet" href="/assets/css/cart/order.css" />
-    <style>
-      #wrap {
-        min-height: calc(100vh - 250px);
-      }
-    </style>
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <div class="inner">
-        <div class="cart-nav">
-          <strong>장바구니</strong>
-          <span class="material-icons">arrow_forward_ios</span>
-          <strong class="on">주문결제</strong>
-        </div>
-        <div class="cart-container">
-          <!-- Header -->
-          <section class="cart">
-            <div class="cart-inner">
-              <div class="order-wrap">
-                <!-- 주문 상품 -->
-                <div class="products-content">
-                  <div class="header-box">
-                    <span>주문 상품</span>
-                  </div>
-                  <!-- 주문상품 리스트 -->
-                  <div class="cart-list-wrap">
-                    <div class="cart-list">
-                      <div class="title">주문목록</div>
-                      <!-- 주문목록 -->
-                      <ul class="order-list" id="OrderList"></ul>
-                    </div>
-                  </div>
+    <head>
+        <title>커피런 - 주문결제</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/cart/cart.css" />
+        <link rel="stylesheet" href="/assets/css/cart/order.css" />
+        <style>
+            #wrap {
+                min-height: calc(100vh - 250px);
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <div class="inner">
+                <div class="cart-nav">
+                    <strong>장바구니</strong>
+                    <span class="material-icons">arrow_forward_ios</span>
+                    <strong class="on">주문결제</strong>
                 </div>
-                <!-- 받는 사람 정보 -->
-                <div class="receiver-content">
-                  <div class="header-box">
-                    <span>받는 사람 정보</span>
-                  </div>
-                  <div class="info-form" id="recieverInfoForm" onsubmit="return saveReceiverInfo()">
-                    <div>
-                      <div class="form-row">
-                        <label for="name">이름</label>
-                        <input
-                          type="text"
-                          id="receiverName"
-                          name="name"
-                          placeholder="받는사람 이름을 입력하세요"
-                          autocomplete="off"
-                          required
-                        />
-                      </div>
-                      <div class="form-row">
-                        <label for="contact">연락처</label>
-                        <input
-                          type="text"
-                          id="receiverPhone"
-                          name="contact"
-                          autocomplete="off"
-                          placeholder="받는사람 연락처를 입력하세요"
-                          required
-                        />
-                      </div>
+                <div class="cart-container">
+                    <!-- Header -->
+                    <section class="cart">
+                        <div class="cart-inner">
+                            <div class="order-wrap">
+                                <!-- 주문 상품 -->
+                                <div class="products-content">
+                                    <div class="header-box">
+                                        <span>주문 상품</span>
+                                    </div>
+                                    <!-- 주문상품 리스트 -->
+                                    <div class="cart-list-wrap">
+                                        <div class="cart-list">
+                                            <!-- <div class="title">주문목록</div> -->
+                                            <!-- 주문목록 -->
+                                            <ul class="order-list" id="OrderList"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 받는 사람 정보 -->
+                                <div class="receiver-content">
+                                    <div class="header-box">
+                                        <span>배송 정보 입력</span>
+                                    </div>
+                                    <div class="info-form" id="recieverInfoForm" onsubmit="return saveReceiverInfo()">
+                                        <div>
+                                            <div class="form-row">
+                                                <label for="name">이름</label>
+                                                <input
+                                                    type="text"
+                                                    id="receiverName"
+                                                    name="name"
+                                                    placeholder="받는사람 이름을 입력하세요"
+                                                    autocomplete="off"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="form-row">
+                                                <label for="contact">연락처</label>
+                                                <input
+                                                    type="text"
+                                                    id="receiverPhone"
+                                                    name="contact"
+                                                    autocomplete="off"
+                                                    placeholder="받는사람 연락처를 입력하세요"
+                                                    required
+                                                />
+                                            </div>
 
-                      <!-- 주소 -->
-                      <div class="int-area form-row">
-                        <label for="address" class="address">주소</label>
-                        <input
-                          type="text"
-                          name="address"
-                          id="address"
-                          autocomplete="off"
-                          disabled
-                          placeholder="클릭하여 주소를 입력하세요"
-                          required
-                        />
-                        <button class="addr-btn">검색하기</button>
-                      </div>
-                      <!-- 상세 주소 -->
-                      <div class="int-area form-row">
-                        <label></label>
-                        <input
-                          type="text"
-                          name="detailedAddress"
-                          id="detailedAddress"
-                          autocomplete="off"
-                          placeholder="상세 주소를 입력하세요"
-                          required
-                        />
-                        <label for="detailedAddress" class="detailedAddress"></label>
-                      </div>
-                      <div class="form-row">
-                        <label for="message">배송 요청사항</label>
-                        <input
-                          type="text"
-                          id="receiverMessage"
-                          name="message"
-                          placeholder="(선택) 배송 요청사항을 입력하세요"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                                            <!-- 주소 -->
+                                            <div class="int-area form-row">
+                                                <label for="address" class="address">주소</label>
+                                                <input
+                                                    type="text"
+                                                    name="address"
+                                                    id="address"
+                                                    autocomplete="off"
+                                                    disabled
+                                                    placeholder="클릭하여 주소를 입력하세요"
+                                                    required
+                                                />
+                                                <button class="addr-btn">검색하기</button>
+                                            </div>
+                                            <!-- 상세 주소 -->
+                                            <div class="int-area form-row">
+                                                <label></label>
+                                                <input
+                                                    type="text"
+                                                    name="detailedAddress"
+                                                    id="detailedAddress"
+                                                    autocomplete="off"
+                                                    placeholder="상세 주소를 입력하세요"
+                                                    required
+                                                />
+                                                <label for="detailedAddress" class="detailedAddress"></label>
+                                            </div>
+                                            <div class="form-row">
+                                                <label for="message">배송 요청사항</label>
+                                                <input
+                                                    type="text"
+                                                    id="receiverMessage"
+                                                    name="message"
+                                                    placeholder="(선택) 배송 요청사항을 입력하세요"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment">
+                                <div class="price-total-wrap">
+                                    <div class="current-price">
+                                        <b>총 결제 금액</b>
+                                        <span id="totalOrderPrice">원</span>
+                                    </div>
+                                    <div class="origin-price">
+                                        <b>상품금액</b>
+                                        <span id="totalProductPrice">원</span>
+                                    </div>
+                                    <div class="discount-amount">
+                                        <b>배송비</b>
+                                        <span id="deliveryPrice"></span>
+                                    </div>
+                                </div>
+                                <button class="btn-payment-final">결제하기</button>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-              </div>
-              <div class="payment">
-                <div class="price-total-wrap">
-                  <div class="current-price">
-                    <b>총 결제 금액</b>
-                    <span id="totalOrderPrice">원</span>
-                  </div>
-                  <div class="origin-price">
-                    <b>상품금액</b>
-                    <span id="totalProductPrice">원</span>
-                  </div>
-                  <div class="discount-amount">
-                    <b>배송비</b>
-                    <span id="deliveryPrice"></span>
-                  </div>
-                </div>
-                <button class="btn-payment-final">결제하기</button>
-              </div>
             </div>
-          </section>
         </div>
-      </div>
-    </div>
 
-    <!-- footer -->
-    <%- include('../components/footer.html') -%>
-    <!-- kakao API -->
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <!-- kakao API -->
-    <script src="/assets/js/address_kakao.js"></script>
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/cart/order.js"></script>
-    <script src="/assets/js/cart/payment_btn.js"></script>
-  </body>
+        <!-- footer -->
+        <%- include('../components/footer.html') -%>
+        <!-- kakao API -->
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <!-- kakao API -->
+        <script src="/assets/js/address_kakao.js"></script>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/cart/order.js"></script>
+        <script src="/assets/js/cart/payment_btn.js"></script>
+    </body>
 </html>

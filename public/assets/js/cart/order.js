@@ -11,10 +11,9 @@ function createProductElements() {
             <span class="product-option">옵션: ${item.option}</span>
         </div>
         <div class="product-price">
-            <em class="salePrice">${item.salePrice}</em><span>원</span>
-        </div>
-        <div class="product-amount">
-            <span>x</span><em class="amount">${item.amount}</em><span>개</span>
+            <em class="salePrice">${item.salePrice}원</em>
+            <span>x</span>
+            <em class="amount">${item.amount}개</em>
         </div>
         `;
 
