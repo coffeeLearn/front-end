@@ -69,6 +69,7 @@ td textarea {
     box-sizing: border-box;
     border-radius: 5px;
     padding: 10px;
+    resize: none;
 }
 .textarea-box {
     height: 232px;
