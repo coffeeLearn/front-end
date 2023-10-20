@@ -1,3 +1,4 @@
+// 장바구니 상품 불러오기
 function createProductElements() {
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
 
@@ -30,3 +31,35 @@ totalOrderPrice.innerHTML = paymentItems.totalPriceElement;
 totalProductPrice.innerHTML = paymentItems.originPrice;
 deliveryPrice.innerHTML = paymentItems.deliveryFee + '원';
 createProductElements();
+
+// 이름 , 연락처 불러오기
+
+const receiverName = document.querySelector('#receiverName');
+const receiverPhone = document.querySelector('#receiverPhone');
+const address = document.querySelector('#address');
+const detailedAddress = document.querySelector('#detailedAddress');
+
+async function getUserInfo() {
+    const token = localStorage.getItem('token');
+    console.log(token);
+    try {
+        const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        const userInfo = await res.json();
+
+        receiverName.value = userInfo.name;
+        receiverPhone.value = userInfo.phone;
+        address.value = userInfo.addr;
+        detailedAddress.value = userInfo.detailAddr;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getUserInfo();
