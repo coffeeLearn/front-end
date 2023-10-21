@@ -1,30 +1,25 @@
 <html>
-  <head>
-    <title>커피런 - 주문완료</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/cart/cart.css" />
-    <link rel="stylesheet" href="/assets/css/cart/order_complete.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <div class="inner">
-        <div class="complete-box">
-          <img src="/assets/img/logo_img.png" class="coffee_icon" width="180" />
-          <p class="complete-p">주문이 완료 되었습니다</p>
-          <a href="/items"><button class="complete-btn">쇼핑계속하기</button></a>
-          <a href="/mypage"><button class="order-btn">주문내역보기</button></a>
+    <head>
+        <title>커피런 - 주문완료</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/cart/cart.css" />
+        <link rel="stylesheet" href="/assets/css/cart/order_complete.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <div class="inner">
+                <div class="complete-box">
+                    <img src="/assets/img/logo_img.png" class="coffee_icon" width="180" />
+                    <p class="complete-p">주문이 완료 되었습니다</p>
+                    <a href="/items"><button class="complete-btn">쇼핑계속하기</button></a>
+                    <a href="/mypage"><button class="order-btn">주문내역보기</button></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script src="/assets/js/common.js"></script>
-    <!-- kakao API -->
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <!-- kakao API -->
-    <script src="/assets/js/address_kakao.js"></script>
-    <script src="/assets/js/cart_save_payment_data.js"></script>
-  </body>
+        <script src="/assets/js/common.js"></script>
+    </body>
 </html>
