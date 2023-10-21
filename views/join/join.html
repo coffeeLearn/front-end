@@ -56,9 +56,11 @@
                             id="phoneNumber"
                             autocomplete="off"
                             required
+                            <!--
                             oninput="hypenTel(this)"
-                            maxlength="13"
+                            --
                         />
+                        maxlength="13" />
                         <label for="phoneNumber" class="user-idtext"
                             >휴대폰 번호 <span class="required-asterisk">*</span></label
                         >
@@ -98,11 +100,11 @@
         </div>
         <%- include('../components/footer.html') -%>
     </body>
-    <script>
+    <!-- <script>
         const hypenTel = (target) => {
             target.value = target.value.replace(/[^0-9]/g, '').replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
         };
-    </script>
+    </script> -->
     <!-- kakao API -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
