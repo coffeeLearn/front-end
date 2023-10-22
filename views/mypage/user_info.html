@@ -20,66 +20,49 @@
                         <h2 class="content-title">회원정보</h2>
                     </div>
 
-                    <div class="table-wrap">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th><span class="important">이메일</span></th>
-                                    <td><input class="user-email" value="이메일" disabled /></td>
-                                </tr>
-                                <tr>
-                                    <th><span class="important">비밀번호</span></th>
-                                    <td><input class="user-password" value="********" disabled /></td>
-                                </tr>
-                                <tr>
-                                    <th><span class="important">이름</span></th>
-                                    <td><input type="text" class="user-name" value="이름" /></td>
-                                </tr>
-                                <tr>
-                                    <th><span class="important">휴대폰번호</span></th>
-                                    <td><input type="text" class="user-phone" value="휴대폰번호" /></td>
-                                </tr>
-                                <tr>
-                                    <th><span class="important">주소</span></th>
-                                    <td>
-                                        <input
-                                            type="text"
-                                            name="address"
-                                            class="user-addr"
-                                            autocomplete="off"
-                                            required
-                                            value="주소"
-                                        />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="info-button">
-                        <button class="unsubscrib" onclick="upComingFeatureAlert()">회원탈퇴</button>
-                        <button class="edit-btn" onclick="upComingFeatureAlert()">수정완료</button>
-                    </div>
+                    <form class="user-info-form">
+                        <ul>
+                            <li class="user-info-list">
+                                <label>이메일</label>
+                                <input type="text" class="user-email" disabled />
+                            </li>
+                            <li class="user-info-list">
+                                <label>비밀번호</label>
+                                <input type="text" class="user-password" disabled value="3456" />
+                            </li>
+                            <li class="user-info-list">
+                                <label>이름</label>
+                                <input type="text" class="user-name" />
+                            </li>
+                            <li class="user-info-list">
+                                <label>휴대폰 번호</label>
+                                <input type="text" class="user-phone" />
+                            </li>
+                            <li class="user-info-list">
+                                <label>주소</label>
+                                <div class="search-address">
+                                    <div>
+                                        <input type="text" class="user-address" id="address" />
+                                        <button class="addr-btn">검색하기</button>
+                                    </div>
+                                    <input type="text" class="user-detail-address" name="detailedAddress" />
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="info-button">
+                            <button class="unsubscrib" onclick="upComingFeatureAlert()">회원탈퇴</button>
+                            <button class="edit-btn">수정완료</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
         <%- include('../components/footer.html') -%>
     </body>
-    <script src="/assets/js/fetchApi.js"></script>
     <!-- kakao API -->
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- kakao API -->
     <script src="/assets/js/address_kakao.js"></script>
-    <!-- 회원 정보 불러오기 -->
-    <!-- 페이지 로드 -> fetchUserInfo로 불러와서 입력필드 채움 -->
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', fetchUserInfo);
-    </script> -->
-    <!-- 정보 불러오는 파일 , 탈퇴 -->
-    <script src="/assets/js/user_infomation.js"></script>
+    <script src="/assets/js/mypage/user_info.js"></script>
     <script src="/assets/js/common.js"></script>
 </html>
-
-<!-- 
-조회페이지 -> span
-수정 -> input text 
-탈퇴 -> 버튼 -> 재확인 alert -> 탈퇴 -->
