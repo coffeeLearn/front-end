@@ -8,7 +8,7 @@
         <%- include('../components/head.html') -%>
         <!-- Cutom CSS & JS -->
         <link rel="stylesheet" href="/assets/css/mypage/mypage.css" />
-        <link rel="stylesheet" href="/assets/css/mypage/user_info.css" />
+        <link rel="stylesheet" href="/assets/css/mypage/inquiry.css" />
     </head>
     <body>
         <%- include('../components/header.html') -%>
@@ -20,25 +20,21 @@
                         <h2 class="content-title">문의하기</h2>
                     </div>
 
-                    <div class="table-wrap">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th><span>제목</span></th>
-                                    <td><input type="text" placeholder="제목을 입력해 주세요." /></td>
-                                </tr>
-                                <tr class="textarea-box">
-                                    <th class="textarea-box"><span>내용</span></th>
-                                    <td>
-                                        <textarea placeholder="내용을 입력해 주세요."></textarea>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="info-button">
-                        <button class="edit-btn">등록하기</button>
-                    </div>
+                    <form class="inquiry-form">
+                        <ul>
+                            <li class="inquiry-list">
+                                <label>제목</label>
+                                <input type="text" placeholder="제목을 입력해 주세요." />
+                            </li>
+                            <li class="inquiry-list">
+                                <label>내용</label>
+                                <textarea placeholder="내용을 입력해 주세요."></textarea>
+                            </li>
+                        </ul>
+                        <div class="info-button">
+                            <button class="edit-btn">등록하기</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
