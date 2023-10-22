@@ -24,7 +24,8 @@ body {
 
 /* 정보 */
 
-.user-info-from {
+.user-info-from,
+inquiry-form {
     margin-top: 30px;
 }
 .user-info-list {
@@ -62,6 +63,7 @@ li input {
     margin: 10px 0 10px 20px;
     height: 40px;
     padding: 0 16px;
+    border: 1px solid #ececec;
 }
 .user-address {
     width: 310px;
@@ -69,60 +71,6 @@ li input {
 }
 .user-detail-address {
     margin: 0;
-}
-
-.table-wrap {
-    margin-top: 30px;
-}
-table {
-    border-top: 1px solid #dcdcdc;
-    width: 680px;
-}
-tr {
-    border-bottom: 1px solid #dcdcdc;
-    display: flex;
-}
-th {
-    background: #fbfbfb;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100px;
-    font-weight: 600;
-    padding: 0 40px;
-    height: 72px;
-}
-td {
-    padding: 16px 28px;
-    width: 500px;
-}
-td input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 420px;
-    font-size: 14px;
-    color: #333;
-    border: 1px solid #ececec;
-    height: 36px;
-    border-radius: 5px;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-
-td textarea {
-    font-size: 14px;
-    color: #333;
-    width: 420px;
-    border: 1px solid #ececec;
-    height: 200px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    padding: 10px;
-    resize: none;
-}
-.textarea-box {
-    height: 232px;
 }
 /* 버튼 */
 .info-button {
