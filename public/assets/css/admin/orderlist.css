@@ -57,6 +57,7 @@ button {
     background-color: #fafafa;
     width: 100%;
     border-spacing: 0;
+    margin-bottom: 60px;
 }
 thead {
     height: 30px;
