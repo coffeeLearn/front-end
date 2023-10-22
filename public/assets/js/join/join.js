@@ -1,4 +1,3 @@
-
 // 회원가입(fetch) 함수
 async function signUp() {
     const id = document.getElementById('id').value;
@@ -24,7 +23,7 @@ async function signUp() {
             }),
         });
 
-        if (response.status === 201) {
+        if (response.status === 200) {
             window.location.href = '/join/finish';
         } else {
             const errorData = await response.json();
