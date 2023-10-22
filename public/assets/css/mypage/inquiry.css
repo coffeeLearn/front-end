@@ -22,35 +22,19 @@ body {
     margin-bottom: 60px;
 }
 
-/* 정보 */
+/* 문의하기 내용  */
 
-.user-info-from,
-inquiry-form {
+.inquiry-form {
     margin-top: 30px;
 }
-.user-info-list {
+.inquiry-list {
     width: 680px;
     border-bottom: 1px solid #dcdcdc;
     display: flex;
     min-height: 60px;
 }
-.user-info-list:first-child {
+.inquiry-list:first-child {
     border-top: 1px solid #dcdcdc;
-}
-.search-address {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px 0 10px 20px;
-}
-.search-address div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.search-address button {
-    width: 100px;
-    height: 40px;
 }
 label {
     width: 140px;
@@ -62,17 +46,17 @@ li input {
     width: 420px;
     margin: 10px 0 10px 20px;
     height: 40px;
-    padding: 0 16px;
+    padding: 16px;
     border: 1px solid #ececec;
 }
-.user-address {
-    width: 310px;
-    margin: 0;
+li textarea {
+    width: 420px;
+    margin: 10px 0 10px 20px;
+    padding: 16px;
+    height: 200px;
+    resize: none;
+    border: 1px solid #ececec;
 }
-.user-detail-address {
-    margin: 0;
-}
-/* 버튼 */
 .info-button {
     margin-top: 40px;
     display: flex;
@@ -90,17 +74,6 @@ li input {
     color: #fff;
     text-align: center;
     float: left;
-    padding: 10px;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-.unsubscrib {
-    width: 140px;
-    background: #371d1d;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     padding: 10px;
     font-family: 'Noto Sans KR', sans-serif;
 }

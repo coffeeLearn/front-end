@@ -1,5 +1,4 @@
 const categoryId = window.location.pathname.split('/').at(-1);
-console.log(categoryId);
 
 const categoryName = document.querySelector('.category-name');
 const categoryDescription = document.querySelector('.category-description');
@@ -12,7 +11,6 @@ fetch('http://coffee-learn.mooo.com/api/categories')
         const category = data.filter((item) => {
             return item._id === categoryId;
         })[0];
-        console.log(category);
 
         //상품 정보를 채움
         categoryName.value = category.name;
@@ -50,6 +48,7 @@ form.addEventListener('submit', async (e) => {
             throw new Error('수정에 실패했습니다.');
         }
         alert('수정이 완료 되었습니다.');
+        window.location.href = '/admin/category';
 
         const result = await res.json();
         console.log('업로드 결과:', result);

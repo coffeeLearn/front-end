@@ -1,98 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>커피런 - 회원가입</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/login_join/login_join.css" />
-    <!-- 오류 처리 이벤트 jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <div id="wrap">
-      <section class="section join">
-        <h1>회원가입</h1>
-        <form name="form" id="registerForm" onsubmit="return SignUp()" style="width: 430px">
-          <!-- 필요시 사용:onsubmit="return SignUp()" -->
-          <!-- 아이디 -->
-          <div class="int-area">
-            <input type="text" name="id" id="id" autocomplete="off" required />
-            <label for="id" class="user-idtext">아이디 (e-mail) <span class="required-asterisk">*</span></label>
-          </div>
+<html lang="kr">
+    <head>
+        <title>커피런 - 회원가입</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/login_join/login_join.css" />
+        <!-- 오류 처리 이벤트 jquery -->
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <div id="wrap">
+            <section class="section join">
+                <h1>회원가입</h1>
+                <form name="form" id="registerForm" onsubmit="return SignUp()" style="width: 430px">
+                    <!-- 필요시 사용:onsubmit="return SignUp()" -->
+                    <!-- 아이디 -->
+                    <div class="int-area">
+                        <input type="text" name="id" id="id" autocomplete="off" required />
+                        <label for="id" class="user-idtext"
+                            >아이디 (e-mail) <span class="required-asterisk">*</span></label
+                        >
+                    </div>
 
-          <!-- 비밀번호 -->
-          <div class="int-area">
-            <input type="password" name="pw" id="pw" autocomplete="off" required />
-            <label for="pw">비밀번호 <span class="required-asterisk">*</span></label>
-          </div>
-          <!-- 비밀번호 확인 -->
-          <div class="int-area">
-            <input type="password" name="pwCheck" id="pwCheck" autocomplete="off" required />
-            <label for="pwCheck" class="pw-check-label">비밀번호 확인 <span class="required-asterisk">*</span></label>
-          </div>
+                    <!-- 비밀번호 -->
+                    <div class="int-area">
+                        <input type="password" name="pw" id="pw" autocomplete="off" required />
+                        <label for="pw">비밀번호 <span class="required-asterisk">*</span></label>
+                    </div>
+                    <!-- 비밀번호 확인 -->
+                    <div class="int-area">
+                        <input type="password" name="pwCheck" id="pwCheck" autocomplete="off" required />
+                        <label for="pwCheck" class="pw-check-label"
+                            >비밀번호 확인 <span class="required-asterisk">*</span></label
+                        >
+                    </div>
 
-          <!-- 휴대폰 번호 -->
-          <div class="int-area">
-            <!-- 2nd class 필요시 추가 -> div_phone -->
-            <input type="text" name="phoneNumber" id="phoneNumber" autocomplete="off" required />
-            <label for="phoneNumber" class="user-idtext">휴대폰 번호 <span class="required-asterisk">*</span></label>
-          </div>
+                    <div class="int-area">
+                        <input type="text" name="name" id="name" autocomplete="off" required />
+                        <label for="name" class="user-idtext"> 이름 <span class="required-asterisk">*</span></label>
+                    </div>
+                    <!-- 휴대폰 번호 -->
+                    <div class="int-area">
+                        <!-- 2nd class 필요시 추가 -> div_phone -->
+                        <input
+                            type="tel"
+                            name="phoneNumber"
+                            id="phoneNumber"
+                            autocomplete="off"
+                            required
+                            maxlength="11"
+                        />
+                        <label for="phoneNumber" class="user-idtext"
+                            >휴대폰 번호 <span class="required-asterisk">*</span></label
+                        >
+                    </div>
 
-          <div class="int-area">
-            <input type="text" name="name" id="name" autocomplete="off" required />
-            <label for="name" class="user-idtext"> 이름 <span class="required-asterisk">*</span></label>
-          </div>
-          <!-- 주소 -->
-          <div class="int-area">
-            <input
-              type="text"
-              name="address"
-              placeholder="검색하기 버튼을 클릭해주세요 →"
-              id="address"
-              autocomplete="off"
-              disabled
-              class="addr-input"
-              required
-              style="width: 320px"
-            />
-            <label for="address" class="address">주소 <span class="required-asterisk">*</span></label>
-            <button class="addr-btn">검색하기</button>
-          </div>
-          <!-- 상세 주소 -->
-          <div class="int-area">
-            <input type="text" name="detailedAddress" id="detailedAddress" autocomplete="off" required />
-            <label for="detailedAddress" class="user-idtext">상세 주소 <span class="required-asterisk">*</span></label>
-          </div>
-          <div class="btn-area">
-            <!-- 비밀번호 일치 불일치를 보여줌 -->
-            <p id="result"></p>
-            <!-- 버튼 누르면 회원가입완료 페이지로 -->
-            <button type="button" class="btn1">회원가입</button>
-          </div>
-        </form>
-      </section>
-    </div>
-    <%- include('../components/footer.html') -%>
-  </body>
-
-  <!-- kakao API -->
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <!-- kakao API -->
-  <script src="/assets/js/address_kakao.js"></script>
-  <!-- 빈칸 경고(흔들림)  -->
-  <script src="/assets/js/join/join_warning.js"></script>
-  <!-- pw <-> pw_check 일치 여부 , 모든 칸 작성시 버튼 활성화-->
-  <script src="/assets/js/join/correct_password.js"></script>
-  <!-- 공통 -->
-  <script src="/assets/js/common.js"></script>
-  <!-- 정보 데이터 백으로 넘기기 -->
-  <script src="/assets/js/join/join.js"></script>
+                    <!-- 주소 -->
+                    <div class="int-area">
+                        <input
+                            type="text"
+                            name="address"
+                            placeholder="검색하기 버튼을 클릭해주세요 →"
+                            id="address"
+                            autocomplete="off"
+                            disabled
+                            class="addr-input"
+                            required
+                            style="width: 320px"
+                        />
+                        <label for="address" class="address">주소 <span class="required-asterisk">*</span></label>
+                        <button class="addr-btn">검색하기</button>
+                    </div>
+                    <!-- 상세 주소 -->
+                    <div class="int-area">
+                        <input type="text" name="detailedAddress" id="detailedAddress" autocomplete="off" required />
+                        <label for="detailedAddress" class="user-idtext"
+                            >상세 주소 <span class="required-asterisk">*</span></label
+                        >
+                    </div>
+                    <div class="btn-area">
+                        <!-- 비밀번호 일치 불일치를 보여줌 -->
+                        <p id="result"></p>
+                        <!-- 버튼 누르면 회원가입완료 페이지로 -->
+                        <button type="button" class="btn1">회원가입</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <%- include('../components/footer.html') -%>
+    </body>
+    <!-- <script>
+        const hypenTel = (target) => {
+            target.value = target.value.replace(/[^0-9]/g, '').replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
+        };
+    </script> -->
+    <!-- kakao API -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- kakao API -->
+    <script src="/assets/js/address_kakao.js"></script>
+    <!-- 빈칸 경고(흔들림)  -->
+    <script src="/assets/js/join/join_warning.js"></script>
+    <!-- pw <-> pw_check 일치 여부 , 모든 칸 작성시 버튼 활성화-->
+    <script src="/assets/js/join/correct_password.js"></script>
+    <!-- 공통 -->
+    <script src="/assets/js/common.js"></script>
+    <!-- 정보 데이터 백으로 넘기기 -->
+    <script src="/assets/js/join/join.js"></script>
 </html>
