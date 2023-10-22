@@ -10,6 +10,9 @@ body {
     top: 0;
     left: 0;
 }
+#header .header-right .search-form {
+    border: none;
+}
 .container {
     width: 1280px;
     margin: 50px auto 0;
