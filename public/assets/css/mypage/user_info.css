@@ -129,7 +129,7 @@ td textarea {
     margin-top: 40px;
     display: flex;
     gap: 10px;
-    width: 720px;
+    width: 680px;
     justify-content: flex-end;
 }
 .edit-btn {
