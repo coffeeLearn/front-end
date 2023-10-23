@@ -54,8 +54,8 @@ async function getUserInfo() {
 
         receiverName.value = userInfo.name;
         receiverPhone.value = userInfo.phone;
-        address.value = userInfo.addr;
-        detailedAddress.value = userInfo.detailAddr;
+        address.value = userInfo.address;
+        detailedAddress.value = userInfo.detailedAddress;
     } catch (error) {
         console.log(error);
     }
