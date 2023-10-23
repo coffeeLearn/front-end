@@ -31,47 +31,46 @@ async function handleUserInfo() {
         userEmail.value = userInfo.email;
         userName.value = userInfo.name;
         userPhoneNumber.value = userInfo.phone;
-        userAddress.value = userInfo.addr;
-        userDetailAddress.value = userInfo.addr;
+        userAddress.value = userInfo.address;
+        userDetailAddress.value = userInfo.detailedAddress;
     } catch (error) {
         alert('에러가 발생했습니다.');
     }
-
-    // 회원정보 수정
-
-    updateBtn.addEventListener('click', async (e) => {
-        e.preventDefault();
-
-        const name = userName.value;
-        const phone = userPhoneNumber.value;
-        const email = userEmail.value;
-        const addr = userAddress.value;
-        const detailAddr = userDetailAddress.value;
-        const password = userPassword.value;
-
-        const newUserInfo = JSON.stringify({
-            name,
-            email,
-            password,
-            phone,
-            addr,
-            // detailAddr,
-        });
-
-        try {
-            const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
-                method: 'PUT',
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                },
-                body: newUserInfo,
-            });
-            if (res.ok) {
-                alert('정보가 수정되었습니다.');
-            }
-        } catch (error) {
-            alert('정보 수정이 실패하였습니다.');
-        }
-    });
 }
+// 회원정보 수정
+
+updateBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const name = userName.value;
+    const phone = userPhoneNumber.value;
+    const email = userEmail.value;
+    const address = userAddress.value;
+    const detailedAddress = userDetailAddress.value;
+    const password = userPassword.value;
+
+    const newUserInfo = JSON.stringify({
+        name,
+        email,
+        password,
+        phone,
+        address,
+        detailedAddress,
+    });
+
+    try {
+        const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: newUserInfo,
+        });
+        if (res.ok) {
+            alert('정보가 수정되었습니다.');
+        }
+    } catch (error) {
+        alert('정보 수정이 실패하였습니다.');
+    }
+});

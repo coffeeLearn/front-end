@@ -1,6 +1,11 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
 }
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 #contentWrap {
     width: 1280px;
