@@ -175,6 +175,14 @@ btnGoCart.addEventListener('click', function () {
 // 구매하기 클릭 시 이벤트 처리
 const buyNowBtn = document.getElementById('buyNowBtn');
 buyNowBtn.addEventListener('click', function () {
+    const optionSelect = document.querySelector('select[name="optionSnoInput"]');
+    const option = optionSelect.value.trim(); // trim() 메서드를 사용하여 공백을 제거하고 할당
+
+    if (option === '') {
+        alert('☕ 분쇄 옵션을 선택하세요.');
+        return;
+    }
+    saveToLocalStorage();
     window.location.href = '/cart';
 });
 
@@ -232,8 +240,11 @@ function closeModalAndResetCart() {
     resetCart();
 }
 
-// btn-cancel 클릭 시 on 클래스 제거 및 장바구니 초기화
-btnCancel.addEventListener('click', closeModalAndResetCart);
+// btn-cancel 클릭 시 on 클래스 제거 및 장바구니 모달 닫기
+btnCancel.addEventListener('click', function () {
+    saveToLocalStorage();
+    cartModal.classList.remove('on');
+});
 
 // cartBackground 클릭 시 on 클래스 제거 및 장바구니 초기화
 cartBackground.addEventListener('click', closeModalAndResetCart);
