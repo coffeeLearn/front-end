@@ -42,16 +42,23 @@
                                 <label>주소</label>
                                 <div class="search-address">
                                     <div>
-                                        <input type="text" class="user-address" id="address" />
-                                        <button class="addr-btn">검색하기</button>
+                                        <input type="text" id="address" autocomplete="off" class="user-address" />
+                                        <button type="button" class="addr-btn">검색하기</button>
                                     </div>
-                                    <input type="text" class="user-detail-address" name="detailedAddress" />
+                                    <input
+                                        type="text"
+                                        class="user-detail-address"
+                                        name="detailedAddress"
+                                        id="detailedAddress"
+                                        autocomplete="off"
+                                        required
+                                    />
                                 </div>
                             </li>
                         </ul>
                         <div class="info-button">
                             <button type="button" class="unsubscrib">회원탈퇴</button>
-                            <button class="edit-btn">수정완료</button>
+                            <button type="submit" class="edit-btn">수정완료</button>
                         </div>
                     </form>
                 </div>
