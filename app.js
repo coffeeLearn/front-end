@@ -10,6 +10,7 @@ import joinRouter from './routes/join.js';
 import itemsRouter from './routes/items.js';
 import cartRouter from './routes/cart.js';
 import mypageRouter from './routes/mypage.js';
+import errorPageRouter from './routes/error.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -28,7 +29,8 @@ app.use('/join', joinRouter);
 app.use('/items', itemsRouter);
 app.use('/cart', cartRouter);
 app.use('/mypage', mypageRouter);
+app.use('/error', errorPageRouter);
 
 app.listen(PORT, () => {
-  console.log(`✅ Server listening on port ${PORT}`);
+    console.log(`✅ Server listening on port ${PORT}`);
 });
