@@ -18,8 +18,8 @@ async function signUp() {
                 password: pw,
                 phone: phoneNumber,
                 name,
-                addr: address,
-                detailAddr: detailedAddress,
+                address,
+                detailedAddress,
             }),
         });
 
