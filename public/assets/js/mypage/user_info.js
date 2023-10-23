@@ -33,6 +33,7 @@ async function handleUserInfo() {
         userPhoneNumber.value = userInfo.phone;
         userAddress.value = userInfo.address;
         userDetailAddress.value = userInfo.detailedAddress;
+        userPassword.value = userInfo.password;
     } catch (error) {
         alert('에러가 발생했습니다.');
     }

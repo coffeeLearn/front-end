@@ -1,72 +1,73 @@
 <html>
-  <head>
-    <title>커피런 - 선물세트</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/items/items.css" />
-    <link rel="stylesheet" href="/assets/css/cart/cart_modal.css" />
-    <link rel="stylesheet" href="/assets/css/items/tab.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <!-- 선물 추천 -->
-    <section class="pick" id="pick">
-      <!-- <div class="inner">-->
-      <div class="title">
-        <h2>선물 세트</h2>
-        <span>소중한 사람에게 커피선물세트로 마음을 전달해보세요.</span>
-      </div>
-      <!--상품 리스트 갯수 및 리스트 옵션-->
-      <div class="item-head">
-        <span class="item-num">☕ 총 <em class="productsCount">　</em>개의 상품이 있습니다.</span>
-      </div>
-      <!--전체 메인 섹션-->
-      <div class="container">
-        <div class="tab-box">
-          <!-- 맛 선택 -->
-          <div class="tab-box1">
-            <h3>필터</h3>
-            <h4>가격대</h4>
-            <label class="tab-label">
-              <input type="radio" name="price" data-price="under-20000" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>~2만원 미만</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="price" data-price="20000-30000" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>2만원 ~ 3만원</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="price" data-price="over-30000" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>3만원 이상~</p>
-              </div>
-            </label>
-          </div>
-        </div>
-        <!--상품 리스트-->
-        <div class="item-box" id="pickItemBox">
-          <div class="item-wrap"></div>
-        </div>
-      </div>
-    </section>
-    <!-- 장바구니 모달 -->
-    <%- include('../components/modal_cart.html') -%>
-    <!-- footer -->
-    <%- include('../components/footer.html') -%>
-    <!-- totop -->
-    <%- include('../components/totop.html') -%>
-    <!-- JS -->
-    <script src="/assets/js/scroll_top.js"></script>
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/items/items_giftsets.js"></script>
-  </body>
+    <head>
+        <title>커피런 - 선물세트</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/items/items.css" />
+        <link rel="stylesheet" href="/assets/css/cart/cart_modal.css" />
+        <link rel="stylesheet" href="/assets/css/items/tab.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <!-- 선물 추천 -->
+        <section class="pick" id="pick">
+            <!-- <div class="inner">-->
+            <div class="title">
+                <h2>선물 세트</h2>
+                <span>소중한 사람에게 커피선물세트로 마음을 전달해보세요.</span>
+            </div>
+            <!--상품 리스트 갯수 및 리스트 옵션-->
+            <div class="item-head">
+                <span class="item-num">☕ 총 <em class="productsCount">　</em>개의 상품이 있습니다.</span>
+            </div>
+            <!--전체 메인 섹션-->
+            <div class="container">
+                <div class="tab-box">
+                    <!-- 맛 선택 -->
+                    <div class="tab-box1">
+                        <h3>필터</h3>
+                        <h4>가격대</h4>
+                        <label class="tab-label">
+                            <input type="radio" name="price" data-price="under-20000" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>~2만원 미만</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="price" data-price="20000-30000" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>2만원 ~ 3만원</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="price" data-price="over-30000" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>3만원 이상~</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!--상품 리스트-->
+                <div class="item-box" id="pickItemBox">
+                    <div class="item-wrap"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 장바구니 모달 -->
+        <%- include('../components/modal_cart.html') -%>
+        <!-- footer -->
+        <%- include('../components/footer.html') -%>
+        <!-- totop -->
+        <%- include('../components/totop.html') -%>
+        <!-- JS -->
+        <script src="/assets/js/scroll_top.js"></script>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/items/items_giftsets.js"></script>
+        <script src="/assets/js/cart/modal_cart.js"></script>
+    </body>
 </html>
