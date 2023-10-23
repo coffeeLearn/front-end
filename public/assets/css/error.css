@@ -1,0 +1,41 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#footer {
+    bottom: 0;
+}
+
+#wrap {
+    width: 100%;
+    min-height: calc(100vh - 250px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.error-mark {
+    height: 200px;
+}
+.text-box {
+    margin-bottom: 40px;
+}
+p {
+    font-size: 20px;
+    font-weight: 600;
+}
+.to-home {
+    width: 100px;
+    background-color: rgb(52, 52, 52);
+    padding: 10px 30px;
+    font-weight: 500;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
