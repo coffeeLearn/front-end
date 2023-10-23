@@ -1,73 +1,73 @@
 <html>
-  <head>
-    <title>커피런 - 커피</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../components/head.html') -%>
-    <!-- Cutom CSS & JS -->
-    <link rel="stylesheet" href="/assets/css/items/items.css" />
-    <link rel="stylesheet" href="/assets/css/cart/cart_modal.css" />
-    <link rel="stylesheet" href="/assets/css/items/tab.css" />
-  </head>
-  <body>
-    <%- include('../components/header.html') -%>
-    <!-- 원두 추천 -->
-    <section class="pick" id="pick">
-      <!-- <div class="inner">-->
-      <div class="title">
-        <h2>추천 원두 PICK!</h2>
-        <span>당신의 입맛에 맞는 원두를 찾아보세요!</span>
-      </div>
-      <!--상품 리스트 갯수 및 리스트 옵션-->
-      <div class="item-head">
-        <span class="item-num">☕ 총 <em class="productsCount">　</em>개의 상품이 있습니다.</span>
-      </div>
-      <!--전체 메인 섹션-->
-      <div class="container">
-        <div class="tab-box">
-          <!-- 맛 선택 -->
-          <div class="tab-box1">
-            <h3>필터</h3>
-            <h4>맛과 풍미</h4>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>달콤 쌉싸름</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="고소함/구수함" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>고소함, 구수함</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>묵직하고 달콤한 여운</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="은은하고 편안함" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>은은하고 편안함</p>
-              </div>
-            </label>
-            <label class="tab-label">
-              <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
-              <div class="tab">
-                <div class="material-icons">radio_button_unchecked</div>
-                <p>상큼한 산미와 향</p>
-              </div>
-            </label>
-          </div>
-          <!--생산지 선택-->
-          <!-- 업데이트 필요 -->
-          <!-- <div class="tab-box2">
+    <head>
+        <title>커피런 - 커피</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include('../components/head.html') -%>
+        <!-- Cutom CSS & JS -->
+        <link rel="stylesheet" href="/assets/css/items/items.css" />
+        <link rel="stylesheet" href="/assets/css/cart/cart_modal.css" />
+        <link rel="stylesheet" href="/assets/css/items/tab.css" />
+    </head>
+    <body>
+        <%- include('../components/header.html') -%>
+        <!-- 원두 추천 -->
+        <section class="pick" id="pick">
+            <!-- <div class="inner">-->
+            <div class="title">
+                <h2>추천 원두 PICK!</h2>
+                <span>당신의 입맛에 맞는 원두를 찾아보세요!</span>
+            </div>
+            <!--상품 리스트 갯수 및 리스트 옵션-->
+            <div class="item-head">
+                <span class="item-num">☕ 총 <em class="productsCount">　</em>개의 상품이 있습니다.</span>
+            </div>
+            <!--전체 메인 섹션-->
+            <div class="container">
+                <div class="tab-box">
+                    <!-- 맛 선택 -->
+                    <div class="tab-box1">
+                        <h3>필터</h3>
+                        <h4>맛과 풍미</h4>
+                        <label class="tab-label">
+                            <input type="radio" name="taste" data-taste="달콤 쌉싸름" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>달콤 쌉싸름</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="taste" data-taste="고소함/구수함" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>고소함, 구수함</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="taste" data-taste="묵직하고 달콤한 여운" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>묵직하고 달콤한 여운</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="taste" data-taste="은은하고 편안함" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>은은하고 편안함</p>
+                            </div>
+                        </label>
+                        <label class="tab-label">
+                            <input type="radio" name="taste" data-taste="상큼한 산미와 향" />
+                            <div class="tab">
+                                <div class="material-icons">radio_button_unchecked</div>
+                                <p>상큼한 산미와 향</p>
+                            </div>
+                        </label>
+                    </div>
+                    <!--생산지 선택-->
+                    <!-- 업데이트 필요 -->
+                    <!-- <div class="tab-box2">
             <h4>생산지</h4>
             <label class="tab-label">
               <input type="radio" name="origin" data-origin="아시아/태평양" />
@@ -98,20 +98,21 @@
               </div>
             </label>
           </div> -->
-        </div>
-        <!--상품 리스트-->
-        <div class="item-box" id="pickItemBox"></div>
-      </div>
-    </section>
-    <!-- 장바구니 모달 -->
-    <%- include('../components/modal_cart.html') -%>
-    <!-- 푸터 -->
-    <%- include('../components/footer.html') -%>
-    <!-- 탑버튼 -->
-    <%- include('../components/totop.html') -%>
-    <!-- JS -->
-    <script src="/assets/js/scroll_top.js"></script>
-    <script src="/assets/js/common.js"></script>
-    <script src="/assets/js/items/items_coffee.js"></script>
-  </body>
+                </div>
+                <!--상품 리스트-->
+                <div class="item-box" id="pickItemBox"></div>
+            </div>
+        </section>
+        <!-- 장바구니 모달 -->
+        <%- include('../components/modal_cart.html') -%>
+        <!-- 푸터 -->
+        <%- include('../components/footer.html') -%>
+        <!-- 탑버튼 -->
+        <%- include('../components/totop.html') -%>
+        <!-- JS -->
+        <script src="/assets/js/scroll_top.js"></script>
+        <script src="/assets/js/common.js"></script>
+        <script src="/assets/js/items/items_coffee.js"></script>
+        <script src="/assets/js/cart/modal_cart.js"></script>
+    </body>
 </html>

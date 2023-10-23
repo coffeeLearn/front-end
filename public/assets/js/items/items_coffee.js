@@ -72,6 +72,16 @@ function displayProducts(products, itemBoxId) {
         itemEl.appendChild(itemLink);
         itemEl.appendChild(priceBox);
         itemBox.appendChild(itemEl);
+
+        // 장바구니 버튼 클릭 이벤트 처리
+
+        const cartBtn = itemEl.querySelector('.cart-btn');
+        cartBtn.addEventListener('click', () => {
+            const productName = itemEl.querySelector('.name').textContent;
+            const salePrice = parseFloat(itemEl.querySelector('.sale-price').textContent.replace(/,/g, ''));
+            showCartModal(productName, salePrice);
+            addModalOnClass();
+        });
     });
 }
 
