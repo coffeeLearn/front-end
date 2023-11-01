@@ -4,8 +4,9 @@ insertUserElement();
 
 async function insertUserElement() {
     const token = localStorage.getItem('token');
+    console.log(token);
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/admin/user', {
+        const res = await fetch('http://coffee-learn.mooo.com/api/users/admin/', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -19,9 +20,9 @@ async function insertUserElement() {
 
         users.forEach((user, idx) => {
             const userNumber = users.length - idx;
-            const userEmail = user.reg_date;
-            const userStatus = user.status;
-            const user = user.userId;
+            const userName = user.name;
+            const userEmail = user.email;
+            const userStatus = user.authority ? '관리자' : '회원';
 
             //리스트 불러오기
 
@@ -31,7 +32,7 @@ async function insertUserElement() {
                 <tbody>
                 <tr>
                 <td class="user-number">${userNumber}</td>
-                <td class="user">${user}</td>
+                <td class="user-name">${userName}</td>
                 <td class="user-email">${userEmail}</td>
                 <td class="user-status">${userStatus}</td>
                 </tr>

@@ -28,8 +28,23 @@ const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
 const form = document.querySelector('#addItemForm');
 
+const filesizeCheck = () => {
+    const limitSize = 1024 * 1024;
+    const mainImgSize = inputMainImg.files[0] ? inputMainImg.files[0].size : 0;
+    const subImgSize = inputSubImg.files[0] ? inputSubImg.files[0].size : 0;
+    if (mainImgSize > limitSize) {
+        alert('이미지 용량이 너무 큽니다. 1MB 미만의 이미지를 선택해주세요.');
+    }
+
+    if (subImgSize > limitSize) {
+        alert('설명(이미지) 용량이 너무 큽니다. 1MB 미만의 이미지를 선택해주세요.');
+    }
+};
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    filesizeCheck();
 
     const category = selectCategory.value;
     const taste = selectTaste.value;
