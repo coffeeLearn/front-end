@@ -102,6 +102,7 @@ form.addEventListener('submit', async (e) => {
             throw new Error('상품 수정에 실패했습니다.');
         }
         alert('상품수정이 완료 되었습니다.');
+        location.href = '/admin/product';
 
         const result = await res.json();
         console.log('업로드 결과:', result);
