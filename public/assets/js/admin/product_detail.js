@@ -67,7 +67,6 @@ form.addEventListener('submit', async (e) => {
     const salePercent = inputSalePercent.value;
     const amount = inputAmounut.value;
     const mainImg = inputMainImg.files[0];
-    console.log(inputMainImg.files[0]);
     const subImg = inputSubImg.files[0];
     const description = inputDescription.value;
     const show = selectShow.value;
@@ -92,7 +91,7 @@ form.addEventListener('submit', async (e) => {
     try {
         const token = localStorage.getItem('token');
         const res = await fetch(`http://coffee-learn.mooo.com/api/products/admin/${productId}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
             },
