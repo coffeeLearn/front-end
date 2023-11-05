@@ -31,7 +31,7 @@ paymentButton.addEventListener('click', async function () {
     try {
         const token = localStorage.getItem('token');
 
-        const res = await fetch('http://coffee-learn.mooo.com/api/users/orders', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/users/orders', {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${token}`,

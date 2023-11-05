@@ -76,7 +76,7 @@ form.addEventListener('submit', async (e) => {
     });
 
     const token = localStorage.getItem('token');
-    const apiUrl = 'http://coffee-learn.mooo.com/api/products/admin';
+    const apiUrl = 'https://coffee-learn.mooo.com/api/products/admin';
 
     const payload = new FormData();
     payload.append('data', product);

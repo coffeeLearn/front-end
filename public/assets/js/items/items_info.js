@@ -1,6 +1,6 @@
 // 상품 데이터 호출
 function getProducts() {
-    return fetch('http://coffee-learn.mooo.com/api/products').then((res) => res.json());
+    return fetch('https://coffee-learn.mooo.com/api/products').then((res) => res.json());
 }
 
 // salePrice를 계산하는 함수

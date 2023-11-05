@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) => {
 
     const token = localStorage.getItem('token');
 
-    const apiUrl = 'http://coffee-learn.mooo.com/api/categories/admin';
+    const apiUrl = 'https://coffee-learn.mooo.com/api/categories/admin';
 
     const res = await fetch(apiUrl, {
         method: 'POST',

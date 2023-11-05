@@ -1,6 +1,6 @@
 function fetchApi(path, params) {
     const token = localStorage.getItem('token');
-    const URL = 'http://coffee-learn.mooo.com/api/';
+    const URL = 'https://coffee-learn.mooo.com/api/';
     return fetch(`${URL}${path}`, {
         ...params,
         headers: {

@@ -7,7 +7,7 @@ unsubscribBtn.addEventListener('click', async () => {
 
     if (window.confirm('회원 탈퇴를 진행하시겠습니까?')) {
         try {
-            await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
+            await fetch('https://coffee-learn.mooo.com/api/users/mypage', {
                 method: 'DELETE',
                 headers: {
                     Authorization: `Bearer ${token}`,

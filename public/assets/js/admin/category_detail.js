@@ -4,7 +4,7 @@ const categoryName = document.querySelector('.category-name');
 const categoryDescription = document.querySelector('.category-description');
 const form = document.querySelector('#addCategoryForm');
 
-fetch('http://coffee-learn.mooo.com/api/categories')
+fetch('https://coffee-learn.mooo.com/api/categories')
     .then((response) => response.json())
     .then((data) => {
         // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택
@@ -35,7 +35,7 @@ form.addEventListener('submit', async (e) => {
 
     try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`http://coffee-learn.mooo.com/api/categories/admin/${categoryId}`, {
+        const res = await fetch(`https://coffee-learn.mooo.com/api/categories/admin/${categoryId}`, {
             method: 'PUT',
             headers: {
                 Authorization: `Bearer ${token}`,

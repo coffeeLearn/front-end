@@ -5,7 +5,7 @@ insertCategoryElement();
 
 async function insertCategoryElement() {
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/categories', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/categories', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -48,7 +48,7 @@ async function insertCategoryElement() {
 
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
                     const categoryId = eventTarget.id;
-                    const apiUrl = `http://coffee-learn.mooo.com/api/categories/admin/${categoryId}`;
+                    const apiUrl = `https://coffee-learn.mooo.com/api/categories/admin/${categoryId}`;
 
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
