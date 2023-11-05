@@ -40,14 +40,17 @@ async function insertOrderElement() {
                     <td class="order-number" rowspan="1">${orderNumber}</td>
                     <td class="order-date">${orderDate}</td>
                     <td class="order-item">
+                       <div>
                         <p class="item-name">${itemName}</p>
                         <p class="option">${option} 외 ${itemCount - 1}건</p>
+                       </div>
+                       <button class="update-button" data-order-id="${orderId}">수정</button>
                     </td>
                     <td class="item-count">${itemCount}</td>
                     <td class="price">${totalPrice.toLocaleString()}원</td>
                     <td class="order-status">
                         <span>${orderStatus}</span>
-                        <button class="update-button" data-order-id="${orderId}">수정</button>
+                       
                     </td>
                     <td><button id ="${orderId}" class="cancel-button"  ${
                     isCancelled ? 'disabled' : ''
