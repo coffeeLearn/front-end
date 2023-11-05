@@ -66,6 +66,7 @@ body {
 }
 
 /* 오른쪽 컨텐츠 영역 */
+
 .order-check {
     margin-bottom: 30px;
 }
@@ -77,35 +78,27 @@ body {
     line-height: normal;
     margin-bottom: 30px;
 }
-.order-box {
+.order-step {
     width: 978px;
     height: 115px;
-    border-radius: 10px;
+    padding: 20px 100px 30px;
     background-color: honeydew;
-}
-
-.order-ul {
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 118px 30px;
 }
-.arrow-li {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    margin-top: 19px;
-    margin-bottom: 19px;
+.order-step li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.order-check ul li p {
-    text-align: center;
-    color: #000;
-    font-size: 30px;
-    font-style: normal;
+.order-step li p {
     font-weight: 600;
-    line-height: normal;
-    padding: 0;
-    margin: 0;
+    font-size: 30px;
+    margin-bottom: 4px;
 }
 .search-form {
     display: block;
@@ -263,7 +256,6 @@ tbody tr td {
 .order-status span {
     width: 70px;
     display: inline-block;
-    text-align: left;
 }
 .cancel-button {
     height: 32px;

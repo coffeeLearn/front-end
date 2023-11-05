@@ -1,4 +1,5 @@
 const myOrderList = document.querySelector('#mypageList');
+const orderStep = document.querySelector('.order-step');
 
 insertOrderElement();
 async function insertOrderElement() {
@@ -16,6 +17,38 @@ async function insertOrderElement() {
         const orders = await res.json();
         orders.reverse();
 
+        // 주문 상태 현황 불러오기
+
+        orderStep.insertAdjacentHTML(
+            'beforeend',
+            `
+        <li>
+            <p id="total-order-count">${orders.length}</p>
+            <span>총주문수</span>
+        </li>
+        <li>
+            <p id="payment-complete-count">0</p>
+            <span>결제 완료</span>
+        </li>
+        <li>
+            <p id="preparing-count">0</p>
+            <span>상품준비중</span>
+        </li>
+        <li>
+            <p id="shipping-count">0</p>
+            <span>상품배송중</span>
+        </li>
+        <li>
+            <p id="completed-count">0</p>
+            <span>배송완료</span>
+        </li>
+        <li>
+            <p id="canceled-count">0</p>
+            <span>주문 취소</span>
+        </li>
+        `
+        );
+
         orders.forEach((order, idx) => {
             const orderId = order._id;
 
@@ -31,6 +64,35 @@ async function insertOrderElement() {
 
             const newDate = new Date(regDate);
             const orderDate = newDate.toISOString().slice(0, 19).replace('T', ' ');
+
+            if (orderStatus === '결제 완료') {
+                const countElement = document.getElementById('payment-complete-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            } else if (orderStatus === '상품준비중') {
+                const countElement = document.getElementById('preparing-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            } else if (orderStatus === '배송준비중') {
+                const countElement = document.getElementById('shipping-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            } else if (orderStatus === '배송완료') {
+                const countElement = document.getElementById('completed-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            } else if (orderStatus === '주문 취소') {
+                const countElement = document.getElementById('canceled-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            }
+
+            // 리스트 불러오기
 
             myOrderList.insertAdjacentHTML(
                 'beforeend',
@@ -50,7 +112,6 @@ async function insertOrderElement() {
                     <td class="price">${totalPrice.toLocaleString()}원</td>
                     <td class="order-status">
                         <span>${orderStatus}</span>
-                       
                     </td>
                     <td><button id ="${orderId}" class="cancel-button"  ${
                     isCancelled ? 'disabled' : ''
