@@ -49,9 +49,10 @@ async function insertOrderElement() {
         `
         );
 
+        document.querySelector('.total-orders').innerHTML = `내역 총 ${orders.length}건`;
+
         orders.forEach((order, idx) => {
             const orderId = order._id;
-
             const orderNumber = orders.length - idx;
             const regDate = order.reg_date;
             const itemName = order.products[0].productName;
@@ -59,8 +60,6 @@ async function insertOrderElement() {
             const itemCount = order.products.length;
             const totalPrice = order.totalPriceEl;
             const orderStatus = order.status;
-
-            const isCancelled = orderStatus === '주문 취소';
 
             const newDate = new Date(regDate);
             const orderDate = newDate.toISOString().slice(0, 19).replace('T', ' ');
@@ -106,7 +105,9 @@ async function insertOrderElement() {
                         <p class="item-name">${itemName}</p>
                         <p class="option">${option} 외 ${itemCount - 1}건</p>
                        </div>
-                       <button class="update-button" data-order-id="${orderId}">수정</button>
+                       <button class="update-button" data-order-id="${orderId}" ${
+                    orderStatus === '결제 완료' || orderStatus === '상품준비중' ? '' : 'disabled'
+                }>수정</button>
                     </td>
                     <td class="item-count">${itemCount}</td>
                     <td class="price">${totalPrice.toLocaleString()}원</td>
@@ -114,7 +115,7 @@ async function insertOrderElement() {
                         <span>${orderStatus}</span>
                     </td>
                     <td><button id ="${orderId}" class="cancel-button"  ${
-                    isCancelled ? 'disabled' : ''
+                    orderStatus === '주문 취소' ? 'disabled' : ''
                 }>주문 취소</button></td>
                 </tr>
             </tbody>
