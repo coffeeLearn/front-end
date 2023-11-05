@@ -67,6 +67,8 @@ body {
 
 /* 오른쪽 컨텐츠 영역 */
 
+/* 오더 현황 STEP */
+
 .order-check {
     margin-bottom: 30px;
 }
@@ -100,6 +102,8 @@ body {
     font-size: 30px;
     margin-bottom: 4px;
 }
+
+/* search form */
 .search-form {
     display: block;
     width: 976px;
