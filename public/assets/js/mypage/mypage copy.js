@@ -151,7 +151,7 @@ async function insertOrderElement() {
             });
         });
 
-        // 주문 수정
+        // 상세 정보 모달에 정보 채우기
         const modifyBtns = document.querySelectorAll('.update-button');
         const orderNumberInput = document.querySelector('#orderNumber');
         const orderProductsInput = document.querySelector('#orderProducts');
@@ -163,9 +163,9 @@ async function insertOrderElement() {
 
         modifyBtns.forEach((modifyBtn) => {
             modifyBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
                 openModal();
                 const orderId = e.target.id;
-                console.log(orderId);
 
                 try {
                     const token = localStorage.getItem('token');
@@ -184,8 +184,8 @@ async function insertOrderElement() {
                     })[0];
 
                     orderNumberInput.value = orderInfo._id;
-                    orderProductsInput.value = orderInfo.products[0].productName;
-                    orderPersonNameInput.value = orderInfo.userName;
+                    orderProductsInput.value = orderInfo.products[0].productName + ` 외${orderInfo.products.length}건`;
+                    orderPersonNameInput.value = orderInfo.receiver;
                     orderPhoneNumberInput.value = orderInfo.receiverPhone;
                     orderAddressInput.value = orderInfo.address;
                     orderDetailAddressInput.value = orderInfo.detailedAddress;
@@ -194,6 +194,47 @@ async function insertOrderElement() {
                     console.log(error);
                 }
             });
+        });
+
+        const form = document.querySelector('.order-detail-form');
+
+        // 상품 수정 후 전송하기
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const receiver = orderPersonNameInput.value;
+            const receiverPhone = orderPhoneNumberInput.value;
+            const receiverAddr = orderAddressInput.value;
+            const orderId = orderNumberInput.value;
+            // const detailedAddress = orderDetailAddressInput.value;
+            // const message = orderMessageInput.value;
+
+            const orderInfo = {
+                receiver,
+                receiverPhone,
+                receiverAddr,
+                // detailedAddress,
+                // message,
+            };
+            const dataJson = JSON.stringify(orderInfo);
+
+            try {
+                const token = localStorage.getItem('token');
+                const res = await fetch(`https://coffee-learn.mooo.com/api/mypage/orders/${orderId}`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: dataJson,
+                });
+                if (!res.ok) {
+                    alert('수정에 실패했습니다.');
+                }
+                alert('수정이 완료 되었습니다.');
+                closeModal();
+            } catch (error) {
+                console.log(error);
+            }
         });
     } catch (error) {
         console.log(error);

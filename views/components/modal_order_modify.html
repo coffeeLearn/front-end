@@ -5,7 +5,7 @@
           <h2>배송 정보 수정</h2>
           <p class="close" onclick="closeModal()">&times;</p>
         </div>
-        <div>
+        <form class="order-detail-form">
             <div class="form-row">
               <label for="name">주문번호</label>
               <input type="text" id="orderNumber" disabled />
@@ -34,7 +34,7 @@
                 placeholder="클릭하여 주소를 입력하세요"
                 required
             />
-            <button class="addr-btn">검색하기</button>
+            <button class="addr-btn" type="button">검색하기</button>
         </div>
         <!-- 상세 주소 -->
         <div class="int-area form-row">
@@ -51,14 +51,14 @@
         </div>
             <div class="form-row">
               <label for="contact">배송 요청사항:</label>
-              <input type="text" id="contact" name="contact" />
+              <input type="text" id="contact" name="contact" disabled />
             </div>
             <div class="btn-submit">
-                <button id="modifyComplete">
+                <button id="modifyComplete" type="submit">
                 주문 정보 수정하기
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
