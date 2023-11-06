@@ -1,16 +1,18 @@
     <!-- 모달 창 -->
-    <div id="myModal" class="modal">
+    <div id="myModal" class="modal" style="display: none;">
       <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div>
-          <h2>주문 정보 수정</h2>
+        <div class="title-box">
+          <h2>배송 정보 수정</h2>
+          <p class="close" onclick="closeModal()">&times;</p>
+        </div>
+        <form class="order-detail-form">
             <div class="form-row">
               <label for="name">주문번호</label>
-              <span id="orderNumber">a</span>
+              <input type="text" id="orderNumber" disabled />
             </div>
             <div class="form-row">
               <label for="name">주문상품</label>
-              <span id="orderProducts">b</span>
+              <input type="text" id="orderProducts" disabled />
             </div>
             <div class="form-row">
               <label for="name">이름</label>
@@ -20,26 +22,43 @@
               <label for="contact">연락처</label>
               <input type="text" id="orderHp" name="contact" required />
             </div>
-            <!-- 주소 -->
-            <div class="int-area form-row">
-              <label for="address" class="address">주소</label>
-              <input type="text" name="address" id="address" autocomplete="off" required />
-            </div>
-            <!-- 상세 주소 -->
-            <div class="int-area form-row">
-              <input type="text" name="detailedAddress" id="detailedAddress" autocomplete="off" required />
-              <label for="detailedAddress" class="user-idtext"></label>
-            </div>
+           <!-- 주소 -->
+           <div class="int-area form-row">
+            <label for="address" class="address">주소</label>
+            <input
+                type="text"
+                name="address"
+                id="address"
+                autocomplete="off"
+                disabled
+                placeholder="클릭하여 주소를 입력하세요"
+                required
+            />
+            <button class="addr-btn" type="button">검색하기</button>
+        </div>
+        <!-- 상세 주소 -->
+        <div class="int-area form-row">
+          <label for="detailedAddress" class="detailedAddress"></label>
+            <input
+                type="text"
+                name="detailedAddress"
+                id="detailedAddress"
+                autocomplete="off"
+                placeholder="상세 주소를 입력하세요"
+                required
+            />
+           
+        </div>
             <div class="form-row">
               <label for="contact">배송 요청사항:</label>
-              <input type="text" id="contact" name="contact" />
+              <input type="text" id="contact" name="contact" disabled />
             </div>
             <div class="btn-submit">
-                <button id="modifyComplete" onclick="upComingFeatureAlert()"/>
+                <button id="modifyComplete" type="submit">
                 주문 정보 수정하기
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ insertOrderElement();
 async function insertOrderElement() {
     const token = localStorage.getItem('token');
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/admin/orders', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/admin/orders', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -29,7 +29,7 @@ async function insertOrderElement() {
         </li>
         <li>
             <p id="payment-complete-count">0</p>
-            <span>결제완료</span>
+            <span>결제 완료</span>
         </li>
         <li>
             <p id="preparing-count">0</p>
@@ -43,10 +43,14 @@ async function insertOrderElement() {
             <p id="completed-count">0</p>
             <span>배송완료</span>
         </li>
+        <li>
+            <p id="canceled-count">0</p>
+            <span>주문 취소</span>
+        </li>
             `
         );
 
-        const orderStatuses = ['결제 완료', '상품준비중', '배송준비중', '배송완료'];
+        const orderStatuses = ['결제 완료', '상품준비중', '배송준비중', '배송완료', '주문 취소'];
 
         orders.forEach((order, idx) => {
             const orderId = order._id;
@@ -79,6 +83,11 @@ async function insertOrderElement() {
                 }
             } else if (orderStatus === '배송완료') {
                 const countElement = document.getElementById('completed-count');
+                if (countElement) {
+                    countElement.textContent++;
+                }
+            } else if (orderStatus === '주문 취소') {
+                const countElement = document.getElementById('canceled-count');
                 if (countElement) {
                     countElement.textContent++;
                 }
@@ -129,7 +138,7 @@ async function insertOrderElement() {
                 const selectedStatus = selectElement.value;
 
                 try {
-                    const apiUrl = `http://coffee-learn.mooo.com/api/admin/orders/${orderId}`;
+                    const apiUrl = `https://coffee-learn.mooo.com/api/admin/orders/${orderId}`;
                     const token = localStorage.getItem('token');
                     const res = await fetch(apiUrl, {
                         method: 'PUT',
@@ -162,7 +171,7 @@ async function insertOrderElement() {
 
                 if (window.confirm('해당 주문을 취소하시겠습니까?')) {
                     const orderNumber = eventTarget.id;
-                    const apiUrl = `http://coffee-learn.mooo.com/api/admin/orders/${orderNumber}`;
+                    const apiUrl = `https://coffee-learn.mooo.com/api/admin/orders/${orderNumber}`;
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',
                         headers: {

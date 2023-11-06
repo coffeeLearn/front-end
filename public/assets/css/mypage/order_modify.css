@@ -1,88 +1,97 @@
 #myModal {
-  display: none; /* 기본적으로 모달은 숨김 상태 */
-  position: fixed; /* 화면에 고정된 위치에 표시 */
-  z-index: 1; /* 다른 요소 위에 표시되도록 함 */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* 스크롤 가능하도록 함 */
-  background-color: rgba(0, 0, 0, 0.4); /* 배경을 어둡게 표시 */
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* 모달 내용 스타일 */
 .modal-content {
-  background-color: #fefefe;
-  margin: 10% auto; /* 화면 중앙에 배치 */
-  padding: 20px;
-  border: 1px solid #888;
-  border-radius: 31px;
-  width: 50%;
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    width: 800px;
+    margin: 200px auto;
 }
-.modal-content h2 {
-  margin-left: 35px;
-  color: #000;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  border-bottom: 1px solid;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.form-row {
-  display: flex;
-  align-items: center;
-  margin-left: 35px;
-  margin-bottom: 10px;
-}
-
-.form-row label {
-  width: 120px;
-  margin-right: 10px;
-  font-size: 16px;
-}
-#detailedAddress{
-    margin-left: 130px;
-    width: 100%;
-}
-.modal-content input {
-  width: 500px;
-  height: 32px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-}
-.btn-submit{
-    margin-top: 40px;
-    margin-bottom: 30px;
+.title-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0 10px;
+    margin-bottom: 30px;
 }
-#modifyComplete {
-  height: 50px;
-  padding: 10px;
-  border-radius: 50px;
-  background: #288341;
-  color: #fff;
-  width: 300px;
-  border: none;
-  font-size: 16px;
-  margin: auto;
-  text-align: center;
+.title-box p {
+    display: inline;
 }
-/* 닫기 버튼 스타일 */
+.title-box h2 {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 .close {
-  margin: 0 auto;
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin: 0 35px 10px 35px;
+}
+#address {
+    width: 408px;
+    margin-right: 10px;
+}
+.addr-btn {
+    border-radius: 5px;
+    border: 1px solid #999;
+    height: 36px;
+    width: 80px;
+}
+
+.form-row label {
+    width: 120px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+.modal-content input {
+    width: 500px;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+}
+.btn-submit {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+#modifyComplete {
+    margin-top: 40px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 15px;
+    background: #288341;
+    color: #fff;
+    width: 300px;
+    border: none;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
 }

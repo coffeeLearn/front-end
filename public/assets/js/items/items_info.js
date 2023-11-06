@@ -1,6 +1,6 @@
 // 상품 데이터 호출
 function getProducts() {
-    return fetch('http://coffee-learn.mooo.com/api/products').then((res) => res.json());
+    return fetch('https://coffee-learn.mooo.com/api/products').then((res) => res.json());
 }
 
 // salePrice를 계산하는 함수
@@ -18,7 +18,6 @@ function updateProductInfo(product) {
     const salePercent = document.querySelector('.sale-percent');
     const salePrice = document.querySelector('.sale-price');
     const originPrice = document.querySelector('.origin-price');
-    const amountCount = document.querySelector('.amount-count');
     const productMainImg = document.querySelector('.main-img');
     const productSubImg = document.querySelector('.sub-img');
     const originPriceWrap = document.querySelector('.origin-price-wrap');
@@ -43,8 +42,8 @@ function updateProductInfo(product) {
     const calculatedSalePrice = calculateSalePrice(product.price, product.salePercent);
     salePrice.innerText = calculatedSalePrice.toLocaleString();
 
-    // amountCount 업데이트
-    amountCount.innerText = product.amount;
+    // // amountCount 업데이트
+    // amountCount.innerText = product.amount;
 
     // salePercent가 0인 경우 클래스 추가
     if (product.salePercent === 0) {
@@ -118,9 +117,10 @@ function init() {
 function updateTotalPrice(product) {
     const total = document.querySelector('.total-price');
     const salePrice = document.querySelector('.sale-price');
+    const amountCount = document.querySelector('.amount-count');
 
     // totalPrice 계산
-    const totalPrice = product.amount * parseInt(salePrice.innerText.replace(/,/g, ''));
+    const totalPrice = amountCount.innerHTML * parseInt(salePrice.innerText.replace(/,/g, ''));
 
     // total 업데이트
     total.innerText = totalPrice.toLocaleString();

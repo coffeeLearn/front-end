@@ -5,7 +5,7 @@ insertProductElement();
 
 async function insertProductElement() {
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/products', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/products', {
             method: 'GET',
         });
         if (!res.ok) {
@@ -48,7 +48,8 @@ async function insertProductElement() {
 
                 if (window.confirm('해당 상품을 삭제하시겠습니까?')) {
                     const productNumber = eventTarget.id;
-                    const apiUrl = `http://coffee-learn.mooo.com/api/products/admin/${productNumber}`;
+                    console.log(productNumber);
+                    const apiUrl = `https://coffee-learn.mooo.com/api/products/admin/${productNumber}`;
 
                     const res = await fetch(apiUrl, {
                         method: 'DELETE',

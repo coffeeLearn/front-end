@@ -13,7 +13,7 @@ const inputDescription = document.querySelector('.input-description');
 const selectShow = document.querySelector('.select-show');
 const form = document.querySelector('#updateItemForm');
 
-fetch('http://coffee-learn.mooo.com/api/products')
+fetch('https://coffee-learn.mooo.com/api/products')
     .then((response) => response.json())
     .then((data) => {
         // 상품 목록 중 찾고자 하는 상품을 id로 필터링하여 선택
@@ -67,7 +67,6 @@ form.addEventListener('submit', async (e) => {
     const salePercent = inputSalePercent.value;
     const amount = inputAmounut.value;
     const mainImg = inputMainImg.files[0];
-    console.log(inputMainImg.files[0]);
     const subImg = inputSubImg.files[0];
     const description = inputDescription.value;
     const show = selectShow.value;
@@ -91,8 +90,8 @@ form.addEventListener('submit', async (e) => {
 
     try {
         const token = localStorage.getItem('token');
-        const res = await fetch(`http://coffee-learn.mooo.com/api/products/admin/${productId}`, {
-            method: 'PUT',
+        const res = await fetch(`https://coffee-learn.mooo.com/api/products/admin/${productId}`, {
+            method: 'PATCH',
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -103,6 +102,7 @@ form.addEventListener('submit', async (e) => {
             throw new Error('상품 수정에 실패했습니다.');
         }
         alert('상품수정이 완료 되었습니다.');
+        location.href = '/admin/product';
 
         const result = await res.json();
         console.log('업로드 결과:', result);

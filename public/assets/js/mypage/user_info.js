@@ -14,7 +14,7 @@ handleUserInfo();
 async function handleUserInfo() {
     const token = localStorage.getItem('token');
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/users/mypage', {
             method: 'GET',
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ updateBtn.addEventListener('click', async (e) => {
     });
 
     try {
-        const res = await fetch('http://coffee-learn.mooo.com/api/users/mypage', {
+        const res = await fetch('https://coffee-learn.mooo.com/api/users/mypage', {
             method: 'PUT',
             headers: {
                 Authorization: `Bearer ${token}`,

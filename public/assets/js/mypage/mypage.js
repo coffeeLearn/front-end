@@ -1,5 +1,5 @@
 let orderList;
-const apiUrl = 'http://coffee-learn.mooo.com/api/mypage/order';
+const apiUrl = 'https://coffee-learn.mooo.com/api/mypage/order';
 function getProducts() {
     return fetch('/assets/data/order.json')
         .then((response) => {

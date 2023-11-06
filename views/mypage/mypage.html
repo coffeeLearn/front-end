@@ -16,36 +16,9 @@
             <div class="order-inner">
                 <div class="order-check">
                     <h2 class="content-title">주문/배송 조회</h2>
-                    <div class="order-box">
-                        <ul class="order-ul">
-                            <li>
-                                <p>0</p>
-                                주문접수
-                            </li>
-                            <li class="material-icons arrow-li">arrow_forward_ios</li>
-                            <li>
-                                <p>0</p>
-                                결제완료
-                            </li>
-                            <li class="material-icons arrow-li">arrow_forward_ios</li>
-                            <li>
-                                <p>0</p>
-                                배송준비중
-                            </li>
-                            <li class="material-icons arrow-li">arrow_forward_ios</li>
-                            <li>
-                                <p>0</p>
-                                배송중
-                            </li>
-                            <li class="material-icons arrow-li">arrow_forward_ios</li>
-                            <li>
-                                <p>0</p>
-                                배송완료
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="order-step"></ul>
                 </div>
-                <div class="search-form">
+                <!-- <div class="search-form">
                     <div class="form-search">
                         <span class="check">조회</span>
                         <button class="period-btn" id="btnToday" type="radio">오늘</button>
@@ -61,24 +34,21 @@
 
                         <button id="search-button"></button>
                     </div>
-                </div>
+                </div> -->
                 <div class="maypage-list">
                     <span class="total-orders">내역 총 0건</span>
-                    <table id="maypage-list">
+                    <table id="mypageList">
                         <thead>
                             <tr>
-                                <th>상품번호/주문일</th>
+                                <th style="width: 8%">주문번호</th>
+                                <th style="width: 11%">주문일</th>
                                 <th>상품명/옵션</th>
-                                <th>수량</th>
-                                <th>상품금액</th>
-                                <th>배송 상태</th>
-                                <th>취소 요청</th>
-                                <th>주문 수정</th>
+                                <th style="width: 8%">총수량</th>
+                                <th style="width: 10%">주문 금액</th>
+                                <th style="width: 10%">상태</th>
+                                <th style="width: 12%">취소 요청</th>
                             </tr>
                         </thead>
-                        <tbody id="maypage-rows"></tbody>
-                        <!-- <th colspan="7" style="text-align: center" class="empty-order">주문 내역이 없습니다</th> -->
-                        <!-- td 존재 -->
                     </table>
                 </div>
             </div>
@@ -89,9 +59,11 @@
         <%- include('../components/modal_order_modify.html') -%> v
         <!-- JS -->
         <script src="/assets/js/common.js"></script>
-        <script src="/assets/js/mypage/mypage.js"></script>
+        <!-- <script src="/assets/js/mypage/mypage.js"></script> -->
+        <script src="/assets/js/mypage/mypage copy.js"></script>
         <script src="/assets/js/mypage/order_modify.js"></script>
         <!-- kakao API -->
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="/assets/js/address_kakao.js"></script>
     </body>
 </html>

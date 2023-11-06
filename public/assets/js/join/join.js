@@ -8,7 +8,7 @@ async function signUp() {
     const detailedAddress = document.getElementById('detailedAddress').value;
 
     try {
-        const response = await fetch('http://coffee-learn.mooo.com/api/users/signup', {
+        const response = await fetch('https://coffee-learn.mooo.com/api/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
