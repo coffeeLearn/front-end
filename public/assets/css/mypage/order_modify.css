@@ -1,22 +1,20 @@
 #myModal {
-    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 101;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
 }
 
 /* 모달 내용 스타일 */
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
     padding: 30px;
     border-radius: 10px;
+    width: 800px;
+    margin: 200px auto;
 }
 .title-box {
     display: flex;
