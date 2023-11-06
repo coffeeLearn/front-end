@@ -105,7 +105,7 @@ async function insertOrderElement() {
                         <p class="item-name">${itemName}</p>
                         <p class="option">${option} 외 ${itemCount - 1}건</p>
                        </div>
-                       <button class="update-button" data-order-id="${orderId}" ${
+                       <button class="update-button" id="${orderId}" ${
                     orderStatus === '결제 완료' || orderStatus === '상품준비중' ? '' : 'disabled'
                 }>수정</button>
                     </td>
@@ -147,6 +147,51 @@ async function insertOrderElement() {
                     }
                     alert('주문이 취소 되었습니다.');
                     location.reload();
+                }
+            });
+        });
+
+        // 주문 수정
+        const modifyBtns = document.querySelectorAll('.update-button');
+        const orderNumberInput = document.querySelector('#orderNumber');
+        const orderProductsInput = document.querySelector('#orderProducts');
+        const orderPersonNameInput = document.querySelector('#orderName');
+        const orderPhoneNumberInput = document.querySelector('#orderHp');
+        const orderAddressInput = document.querySelector('#address');
+        const orderDetailAddressInput = document.querySelector('#detailedAddress');
+        const orderMessageInput = document.querySelector('#contact');
+
+        modifyBtns.forEach((modifyBtn) => {
+            modifyBtn.addEventListener('click', async (e) => {
+                openModal();
+                const orderId = e.target.id;
+                console.log(orderId);
+
+                try {
+                    const token = localStorage.getItem('token');
+                    const res = await fetch(`https://coffee-learn.mooo.com/api/mypage/orders`, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+                    if (!res.ok) {
+                        throw new Error('에러가 발생했습니다.');
+                    }
+                    const data = await res.json();
+                    const orderInfo = data.filter((item) => {
+                        return item._id === orderId;
+                    })[0];
+
+                    orderNumberInput.value = orderInfo._id;
+                    orderProductsInput.value = orderInfo.products[0].productName;
+                    orderPersonNameInput.value = orderInfo.userName;
+                    orderPhoneNumberInput.value = orderInfo.receiverPhone;
+                    orderAddressInput.value = orderInfo.address;
+                    orderDetailAddressInput.value = orderInfo.detailedAddress;
+                    orderMessageInput.value = orderInfo.receiverMessage;
+                } catch (error) {
+                    console.log(error);
                 }
             });
         });
